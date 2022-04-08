@@ -1,0 +1,16 @@
+.header_body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: dimgrey;
+}
+
+
+.right_block {
+    display: flex;
+    flex-direction: row;
+}
+
+.right_block {
+    margin-right: 10px;
+}
