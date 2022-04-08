@@ -1,11 +1,13 @@
 import React from 'react';
 import s from "./Card.module.css";
 
-function Card() {
+function Card(props) {
     return (
         <div className={s.card}>
-            <span className={s.card_title}></span>
-            <span className={s.card_sender}></span>
+            <div className={s.body}>
+                <span className={s.card_title} > {props.title}</span>
+                <span className={s.card_sender} > {props.sender}</span>
+            </div>
         </div>
     );
 }

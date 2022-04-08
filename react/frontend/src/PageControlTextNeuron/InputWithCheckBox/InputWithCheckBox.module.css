@@ -1,0 +1,9 @@
+.body {
+    display: flex;
+    flex-direction: row;
+    height: 30px;
+}
+
+.input {
+    width: 100%;
+}

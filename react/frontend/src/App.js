@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import Header from "./Common/Header/Header";
-import LeftMenu from "./PageControlTextNeuron/LeftMenu/LeftMenu";
+import PageTextControlNeuron from "./PageControlTextNeuron/PageTextControlNeuron";
 
 function App() {
-  return (
-    <div className="App">
-      <Header/>
-        <LeftMenu/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <PageTextControlNeuron/>
+        </div>
+    );
 }
 
 export default App;

@@ -1,9 +1,9 @@
 import someData from "./ControlTextNeuronDataBase";
 
-var getRequestsListLocal = () => {
-    var result = [];
+let getRequestsListLocal = () => {
+    let result = [];
     someData.forEach(element => {
-        var t = element;
+        let t = element;
         delete t.request_image;
         delete t.request;
         result.push(t);
@@ -11,17 +11,17 @@ var getRequestsListLocal = () => {
     return result;
 }
 
-var getRequestDataLocal = (id) => {
+let getRequestDataLocal = (id) => {
     return someData[id];
 }
 
-var getRequestDataExternal = (id) =>{
+let getRequestDataExternal = (id) =>{
 }
 
-var getRequestsListExternal = () =>{
+let getRequestsListExternal = () =>{
 }
 
-var ControlTextNeuronDataBase = {
+let ControlTextNeuronDataBase = {
     getRequestData:getRequestDataLocal,
     getRequestsList:getRequestsListLocal
 }

@@ -1,9 +1,27 @@
 .card {
-    width: 240px;
-    height: 50px;
-
     background: #E1E1E1;
     border-radius: 0 15px 15px 0;
+    padding: 8px 40px 8px 16px;
+    margin-bottom: 8px;
+
+}
+
+
+.body {
+    width: 200px;
+    transition: all .25s;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+.card:hover .body {
+    width: 250px;
+    cursor: pointer;
+}
+
+.card:hover {
+    cursor: pointer;
 }
 
 .card_title {
