@@ -18,7 +18,6 @@ export class CreateImageRequestDto {
     text: string;
 
     @IsNotEmpty()
-    @IsDateString()
     reqDate: Date;
 
     @IsNotEmpty()

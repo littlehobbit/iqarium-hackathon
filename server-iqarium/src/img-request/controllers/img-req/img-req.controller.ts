@@ -40,17 +40,18 @@ export class ImgReqController {
             }
         })
     }))
-    uploadFile(@UploadedFile() file: Express.Multer.File) {
+    async uploadFile(@UploadedFile() file: Express.Multer.File) {
         //console.log(file);
-        const createImageRequestDto: CreateImageRequestDto = this.imgReqService.translateToText(file);
+        const createImageRequestDto = await this.imgReqService.translateToText(file);
+        return HttpStatus.OK;
         // console.log(createImageRequestDto);
-        return this.imgReqService.createImgReq(createImageRequestDto);
+        //return this.imgReqService.createImgReq(createImageRequestDto);
     }
 
     @Get('request')
     getAllRequests() {
         console.log('aaa');
-        return this.imgReqService.getAllRequests()
+        return this.imgReqService.getAllRequests();
     }
 
     @Get('request/:id')
@@ -68,7 +69,7 @@ export class ImgReqController {
         @Body() updateImgRequestDto: CreateImageRequestDto,
         @Param('id', ParseIntPipe) id: number,
     ) {
-        return this.imgReqService.updateImgRequest(updateImgRequestDto, id)
+        return this.imgReqService.updateImgRequest(updateImgRequestDto, id);
     }
 
     @Get('profile-image/:imagename')

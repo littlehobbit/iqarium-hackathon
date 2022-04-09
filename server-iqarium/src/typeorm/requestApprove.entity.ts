@@ -10,22 +10,24 @@ export class RequestApproveEntity extends BaseEntity {
 
     @Column({
         nullable: false,
+        default: false,
     })
-    expertId: number;
+    status: boolean;
 
     @Column({
         nullable: false,
-        default: false,
     })
-    isApproved: boolean;
-/*
+    suggest: string;
+
+
+
+
+
     @ManyToOne(
         () => RequestEntity,
-        (requestEntity) => requestEntity.requestApprove
+        (requestEntity) => requestEntity.id
     )
-    reqEntity: RequestEntity;
-
- */
+    reqId: RequestEntity;
 
 }
 /*

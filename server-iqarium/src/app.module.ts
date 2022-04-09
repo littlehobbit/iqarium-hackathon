@@ -6,6 +6,7 @@ import { ImgRequestModule } from './img-request/img-request.module';
 import {ConfigModule} from "@nestjs/config";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {typeOrmConfigAsync} from "./config/typeorm.config";
+import { CategoryAnalysisModule } from './category-analysis/category-analysis.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import {typeOrmConfigAsync} from "./config/typeorm.config";
       TypeOrmModule.forRootAsync(typeOrmConfigAsync),
       TextRequestModule,
       ImgRequestModule,
+      CategoryAnalysisModule,
   ],
   controllers: [AppController],
   providers: [AppService],

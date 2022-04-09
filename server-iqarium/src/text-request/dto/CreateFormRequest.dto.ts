@@ -18,6 +18,5 @@ export class CreateFormRequestDto {
     text: string;
 
     @IsNotEmpty()
-    @IsDateString()
     reqDate: Date;
 }

@@ -1,6 +1,8 @@
-import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
+import {BaseEntity, Column, Entity, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn} from "typeorm";
 import {IsDateString, IsEmail} from "class-validator";
 import {RequestApproveEntity} from "./requestApprove.entity";
+import {ReplyEntity} from "./reply.entity";
+import {CategoryEntity} from "./category.entity";
 
 @Entity({name: 'requests'})
 export class RequestEntity extends BaseEntity {
@@ -33,7 +35,6 @@ export class RequestEntity extends BaseEntity {
     @Column({
         nullable: false,
     })
-    @IsDateString()
     reqDate: Date;
 
     @Column({
@@ -45,28 +46,45 @@ export class RequestEntity extends BaseEntity {
         nullable: false,
         default: false,
     })
-    expert1: boolean;
+    expertTranslator: boolean;
+
+    @Column({
+        nullable: true,
+    })
+    category: string;
 
     @Column({
         nullable: false,
-        default: false,
+        default: 1,
     })
-    expert2: boolean;
+    stage: number;
 
-    @Column({
-        nullable: false,
-        default: false,
-    })
-    expert3: boolean;
-
-
-    /*
     @OneToMany(
         () => RequestApproveEntity,
-        (requestApproveEntity) => requestApproveEntity.reqEntity
+        (requestApproveEntity) => requestApproveEntity.reqId
     )
-    requestApprove: RequestApproveEntity;
-*/
+    requestApprove: RequestApproveEntity[];
+
+    @OneToMany(
+        () => ReplyEntity,
+        (replyEntity) => replyEntity.reqIdRep
+    )
+    repIdReq: ReplyEntity[];
+
+    @OneToMany(
+        () => CategoryEntity,
+        (categoryEntity) => categoryEntity.reqIdCat
+    )
+    catIdReq: CategoryEntity[];
+
+    /*
+    @ManyToOne(
+        () => ReplyEntity,
+        (replyEntity) => replyEntity.requests
+    )
+    reply: ReplyEntity;
+
+     */
 }
 /*
 @OneToMany(() => Option, (option) => option.question)

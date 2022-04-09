@@ -16,11 +16,12 @@ export class ImgReqService {
 
     constructor(
         @InjectRepository(RequestEntity) private readonly requestRepository: Repository<RequestEntity>,
-        @InjectRepository(RequestApproveEntity) private readonly requestApproveRepository: Repository<RequestApproveEntity>
+        @InjectRepository(RequestApproveEntity) private readonly requestApproveRepository: Repository<RequestApproveEntity>,
+
     ) {
     }
 
-    translateToText (img: Express.Multer.File) {
+    async translateToText (img: Express.Multer.File) {
         const createImageRequestDto: CreateImageRequestDto = {
             "fullName": "Джек Воробей",
             "email": "sparrow@gmail.com",
@@ -29,14 +30,17 @@ export class ImgReqService {
             "reqDate": new Date("2022-04-08"),
             "imgPath": "./uploads/requestImages/16.jpg",
         }
-        return createImageRequestDto;
-    }
-
-    createImgReq(createImageRequestDto: CreateImageRequestDto) {
         console.log(createImageRequestDto);
         const newImage = this.requestRepository.create(createImageRequestDto);
         console.log(newImage);
-        return this.requestRepository.save(newImage);
+        const requestEntity: RequestEntity = await this.requestRepository.save(newImage);
+        requestEntity.stage = 2;
+        //return requestEntity;
+        //return createImageRequestDto;
+    }
+
+    createImgReq(createImageRequestDto: CreateImageRequestDto) {
+
     }
 
 
@@ -62,23 +66,16 @@ export class ImgReqService {
         return await this.requestRepository.findOneById(id);
     }
 
-    updateImgRequest(updateImgRequestDto: CreateImageRequestDto, id: number) {
-        let updImage = this.requestRepository
-            .update(
-                {id: id},
-                updateImgRequestDto);
-        const approve: CreateApproveImgDto =  {
-            expertId: 1,
-            reqEntityId: id,
-            isApproved: true,
+    async updateImgRequest(updateImgRequestDto: CreateImageRequestDto, id: number) {
+        const reqEntity: RequestEntity = await this.requestRepository.findOneById(id);
+        if(reqEntity) {
+            //for(var i in updateImgRequestDto) if(i === null) delete updateImgRequestDto[i];
+            await this.requestRepository.update({id: id}, updateImgRequestDto)
+            await this.requestRepository.update({id: id}, {
+                expertTranslator: true,
+                stage: 3,
+            })
         }
-
-        updImage = this.requestRepository
-            .update(
-                {id: id},
-                {expert1: true}
-            )
-
     }
 
     async findPicture(id: number, @Res() res) {
@@ -88,4 +85,15 @@ export class ImgReqService {
         else res.send(HttpStatus.NOT_FOUND)
     }
 
+
+
+    //findRequestById(id: number): Promise<>
+
+    /*
+     async findQuestionById(id: number): Promise<Question> {
+    return await this.questionRepository.findOne(id, {
+      relations: ['quiz', 'options'],
+    });
+  }
+     */
 }
