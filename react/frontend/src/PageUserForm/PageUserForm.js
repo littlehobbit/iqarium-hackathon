@@ -20,6 +20,7 @@ function PageUserForm(props) {
             <div className={s.two_rows}>
                 <div className={s.big_pic_texts}>
                     <a href={"#"} className={s.logo}>
+                        <img src={ReactLogo} className={s.logo_img}/>
                         <span>Обращайся.ру</span>
                     </a>
                     <div className={s.block_big_pic}>
