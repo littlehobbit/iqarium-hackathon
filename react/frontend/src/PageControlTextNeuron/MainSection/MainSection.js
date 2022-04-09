@@ -3,11 +3,11 @@ import s from "./MainSection.module.css";
 import arrow_left from '../../StaticImages/arrow-left.svg'
 import InputWithCheckBox from "../InputWithCheckBox/InputWithCheckBox";
 import icon from '../../StaticImages/logo.svg'
-import mailIcon from '../../StaticImages/majesticons_mail.svg'
+import mailIcon from '../../StaticImages/majesticons_mail.png'
 import homeIcon from '../../StaticImages/majesticons_home-line.svg'
 import userIcon from '../../StaticImages/majesticons_user-line.svg'
 import calendarIcon from '../../StaticImages/majesticons_calendar.svg'
-import textBoxIcon from '../../StaticImages/majesticons_textbox.svg'
+import textBoxIcon from '../../StaticImages/majesticons_textbox.png'
 import TextAreaWithCheckBox from "../TextAreaWithCheckBox/TextAreaWithCheckBox";
 import Button from "../../Common/Button/Button";
 

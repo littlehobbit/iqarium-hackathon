@@ -37,7 +37,7 @@ function PageCheckCategory() {
                 <PopupFunctionality 
                     child={<PopUpCheckCategories defaultData={popupItem}/>} 
                     ref={popup} 
-                    docName="asdasd"
+                    docName={`Заявка №${popupItem.id}`}
                     />
             </div>
             <div className={s.body}>
@@ -56,7 +56,7 @@ function PageCheckCategory() {
                                       sender={item.sender}
                                       onclick={()=>{popup.current.showPopup(true); setPopupItem(item)}}/>
                     }).slice(0,9)}
-                    {detailedCardsList.length > 10 ? <ShowMore/> : ""}
+                    {detailedCardsList.length > 10 ? <div className={s.centerWrapp}> <ShowMore/> </div> : ""}
                 </div>
             </div>
 

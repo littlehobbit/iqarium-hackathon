@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import s from "./LeftMenu.module.css";
 import Card from "../../Common/Card/Card";
 import ShowMore from "./ShowMore/ShowMore";
@@ -31,6 +31,11 @@ function LeftMenu(props) {
         }
     })
 
+    useEffect(() => {
+        setActiveCard(0)
+    }, []);
+
+
     return (
 
         <div>
@@ -40,8 +45,8 @@ function LeftMenu(props) {
                                                index={item.indexInArray}
                                                isActive={item.isActive}
                                                stateChanger={updateActiveCard}
-                />).slice(0,11)}
-                {cardsList.length > 10 ? <ShowMore/> : ""}
+                />).slice(0,14)}
+                {cardsList.length > 13 ? <div className={s.moreWrapper}> <ShowMore/> </div> : ""}
             </div>
 
         </div>

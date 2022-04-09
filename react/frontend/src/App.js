@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import PageCheckCategory from "./PageCheckCategory/PageCheckCategory";
 import PageTextControlNeuron from "./PageControlTextNeuron/PageTextControlNeuron";
+import PageUserForm from "./PageUserForm/PageUserForm";
 import {
     BrowserRouter,
     Routes,
@@ -25,6 +26,10 @@ function App() {
 
                     <Route path="/page-manual-fix"  element={
                         <PageManualFix/>
+                    }/>
+
+                    <Route path="/page-user-form"  element={
+                        <PageUserForm />
                     }/>
 
             </Routes>

@@ -17,7 +17,7 @@ let PopupFunctionality = forwardRef((props, ref) => {
                 <p>{props.docName}</p>
                 <img src={crossIcon} onClick={() => {
                     setVisibility(!isVisible)
-                }}/>
+                }} className={s.cross}/>
             </div>
             <div className={s.popup_body}>
                 {props.child}

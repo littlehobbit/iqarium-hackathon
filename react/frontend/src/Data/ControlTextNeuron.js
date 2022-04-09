@@ -27,7 +27,7 @@ let getRequestDataExternal = async (id) => {
             text:parsed.text,
             request_date: parsed.reqDate,
         },
-        request_image: "http://26.120.212.37:3000/img-req/request/" + parsed.id+"/Picture"
+        request_image: `http://26.120.212.37:3000/img-req/request/Picture/${parsed.id}`
     }
 }
 
@@ -46,8 +46,8 @@ let getRequestsListExternal = async () =>{
 }
 
 let ControlTextNeuron = {
-    getRequestData:getRequestDataExternal,
-    getRequestsList:getRequestsListExternal
+    getRequestData:getRequestDataLocal,
+    getRequestsList:getRequestsListLocal
 }
 
 export default ControlTextNeuron;

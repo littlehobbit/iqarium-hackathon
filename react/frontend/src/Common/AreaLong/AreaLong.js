@@ -1,12 +1,12 @@
 import React from 'react';
-import s from "./Area.module.css";
+import s from "./AreaLong.module.css";
 
-function Area(props) {
+function AreaLong(props) {
     let inputValue
     return (
         <div className={s.text_area}>
             <img src={props.icon} alt=""/>
-            <textarea rows="18"
+            <textarea rows="15"
                       type="text"
                       value={inputValue}
                       placeholder={props.placeholder}
@@ -15,4 +15,4 @@ function Area(props) {
     );
 }
 
-export default Area;
+export default AreaLong;

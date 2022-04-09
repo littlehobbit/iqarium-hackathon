@@ -10,7 +10,7 @@
     flex-direction: row;
     overflow-x: auto;
     width: 100%;
-    padding-bottom: 20px;
+    margin-bottom: 48px;
 }
 
 .title {
@@ -20,7 +20,7 @@
     font-size: 24px;
     line-height: 29px;
     letter-spacing: 0.4px;
-
+    margin-bottom: 32px;
     /* DarkColor */
 
     color: #262B4F;
@@ -34,7 +34,7 @@
     flex-direction: column;
     align-items: start;
     background-color: white;
-    padding: 38px 40px 50px 24px;
+    padding: 40px 39px 24px 24px;
     border-radius: 15px;
 }
 
@@ -42,11 +42,18 @@
     display: flex;
     flex-flow: row wrap;
     align-content: space-between;
-    justify-content: start;
+    justify-content: space-between;
+}
+
+.centerWrapp {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .position_wrapper {
     position: absolute;
-    left: 28%;
-    top: 48%;
+    left: 20%;
+    top: 44%;
 }

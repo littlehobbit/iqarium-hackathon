@@ -6,12 +6,17 @@
     margin: 0 auto;
 }
 
+.cross {
+    cursor: pointer;
+}
+
 
 .title_block {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
+    margin-bottom: 24px;
 }
 
 .title_block p {

@@ -4,6 +4,10 @@
     margin-bottom: 20px;
 }
 
+.detailed_card:hover {
+    cursor: pointer;
+}
+
 .body {
     order: 0;
     background: #CFC7FF;
