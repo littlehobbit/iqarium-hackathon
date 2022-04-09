@@ -29,7 +29,6 @@ function DetailedCard(props) {
 
 async function func() {
     let otvet = await (await fetch('http://26.120.212.37:3000/img-req/request/1')).json();
-    console.log(otvet);
 }
 
 export default DetailedCard;

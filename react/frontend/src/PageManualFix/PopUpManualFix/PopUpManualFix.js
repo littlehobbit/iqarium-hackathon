@@ -14,11 +14,9 @@ import ControlTextNeuron from '../../Data/ControlTextNeuron';
 function PopUpManualFix(props) {
 
     let [requestData, setRequestData] = useState(null);
-    console.log(props.defaultData);
     useEffect(()=>{
-        ControlTextNeuron.getRequestData(props.defaultData.id).then(result=>{setRequestData(result); console.log(result)});
+        ControlTextNeuron.getRequestData(props.defaultData.id).then(result=>{console.log(result);setRequestData(result);});
     }, [])
-
     return (
         <div className={s.two_rows}>
             <div className={s.data_fields}>

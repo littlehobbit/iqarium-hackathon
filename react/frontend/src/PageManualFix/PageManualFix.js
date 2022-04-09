@@ -22,6 +22,7 @@ function PageManualFix() {
 
     let detailedCardsList = dataArray.map((item, index) => {
         return {
+            id: item.id,
             title: `Заявка №${item.id}`,
             category: "none",
             subCategory: "none",
@@ -50,8 +51,8 @@ function PageManualFix() {
                                              subCategory={item.subCategory}
                                              sender={item.sender}
                                              onclick={() => {
-                                                 popup.current.showPopup(true);
                                                  setPopupItem(item)
+                                                 popup.current.showPopup(true);
                                              }}/>
 
                     }).slice(0, 9)}
