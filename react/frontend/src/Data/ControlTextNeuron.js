@@ -26,8 +26,8 @@ let getRequestsListExternal = async () =>{
 }
 
 let ControlTextNeuronDataBase = {
-    getRequestData:getRequestDataExternal,
-    getRequestsList:getRequestsListExternal
+    getRequestData:getRequestDataLocal,
+    getRequestsList:getRequestsListLocal
 }
 
 export default ControlTextNeuronDataBase;

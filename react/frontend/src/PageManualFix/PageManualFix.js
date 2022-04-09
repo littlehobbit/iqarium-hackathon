@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Header from "../Common/Header/Header";
-import s from "./PageCheckCategory.module.css"
+import s from "./PageManualFix.module.css"
 import FilterButton from "../Common/FilterButton/FilterButton";
 import DetailedCard from "../Common/DetailedCard/DetailedCard";
 import ControlTextNeuron from "../Data/ControlTextNeuron";
 import ShowMore from "../PageControlTextNeuron/LeftMenu/ShowMore/ShowMore";
 import PopUpCheckCategories from "../PopUpCheckCategories/PopUpCheckCategories";
 
-function PageCheckCategory() {
+function PageManualFix() {
 
     const [dataArray, setDataArray] = useState([]);
 
@@ -30,15 +30,8 @@ function PageCheckCategory() {
     return (
         <div className={s.page}>
             <Header/>
-            <PopUpCheckCategories docName={"Заявка № 323435"}/>
             <div className={s.body}>
-                <div className={s.filters_list}>
-                    <FilterButton text={"Все"}/>
-                    <FilterButton text={"Жалобы"}/>
-                    <FilterButton text={"Обращения"}/>
-                    <FilterButton text={"Запросы"}/>
-                </div>
-                <p className={s.title}>Поиск по фильтру</p>
+                <p className={s.title}>Заявки на ручную проверку</p>
                 <div className={s.cards_grid}>
                     {detailedCardsList.map((item) => {
                         return <DetailedCard title={item.title}
@@ -49,10 +42,8 @@ function PageCheckCategory() {
                     {detailedCardsList.length > 10 ? <ShowMore/> : ""}
                 </div>
             </div>
-
-
         </div>
     );
 }
 
-export default PageCheckCategory;
+export default PageManualFix;

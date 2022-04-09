@@ -7,6 +7,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import PageManualFix from "./PageManualFix/PageManualFix";
 
 
 function App() {
@@ -14,12 +15,16 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <Routes>
-                    <Route path="/text-control-neuron" element={
+                    <Route path="/page-text-control-neuron" element={
                         <PageTextControlNeuron/>
                     }/>
 
                     <Route path="/page-check-category"  element={
                         <PageCheckCategory/>
+                    }/>
+
+                    <Route path="/page-manual-fix"  element={
+                        <PageManualFix/>
                     }/>
 
             </Routes>
