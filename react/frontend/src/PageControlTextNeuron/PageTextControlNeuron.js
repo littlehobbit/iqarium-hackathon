@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import s from "./PageTextControlNeuron.module.css";
 import Header from "../Common/Header/Header";
 import LeftMenu from "./LeftMenu/LeftMenu";
@@ -9,17 +9,26 @@ import Card from "../Common/Card/Card";
 function PageTextControlNeuron() {
 
     const [currentInfo, setCurrentInfo] = useState(null);
+    const [currentID, setcurrentID] = useState(null);
+    const [currentList, setCurrentList] = useState([]);
 
+    useEffect(() => {
+        ControlTextNeuron.getRequestsList().then(result=>setCurrentList(result));
+      }, []);
 
-    function updateDisplayedData(requestId) {
-        setCurrentInfo(ControlTextNeuron.getRequestData(requestId))
-    }
+    useEffect(()=>{
+        if(currentID !== null){
+            ControlTextNeuron.getRequestData(currentID).then(result=>setCurrentInfo(result));
+            setCurrentInfo({id:currentID});
+        }
+    }, [currentID])
 
+    console.log()
     return (
         <div className={s.page}>
             <Header/>
             <div className={s.body}>
-                <LeftMenu updateInfo={updateDisplayedData}/>
+                <LeftMenu updateInfo={id=>setcurrentID(id)} cardsListData={currentList}/>
                 {currentInfo !== null ? <MainSection object ={currentInfo}/> : <div>empty list</div>}
 
             </div>

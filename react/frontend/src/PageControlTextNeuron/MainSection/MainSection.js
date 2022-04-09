@@ -12,6 +12,7 @@ import TextAreaWithCheckBox from "../TextAreaWithCheckBox/TextAreaWithCheckBox";
 import Button from "../../Common/Button/Button";
 
 function MainSection(props) {
+    console.log(props)
     return (
         <div className={s.main_section}>
             <div className={s.title}>

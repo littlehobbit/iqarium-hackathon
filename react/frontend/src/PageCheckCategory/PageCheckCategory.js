@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../Common/Header/Header";
 import s from "./PageCheckCategory.module.css"
 import FilterButton from "../Common/FilterButton/FilterButton";
@@ -8,7 +8,15 @@ import ShowMore from "../PageControlTextNeuron/LeftMenu/ShowMore/ShowMore";
 
 function PageCheckCategory() {
 
-    let detailedCardsList = ControlTextNeuron.getRequestsList().map((item, index) => {
+    const [dataArray, setDataArray] = useState([]);
+
+    useEffect(()=>{
+        ControlTextNeuron.getRequestsList().then((result)=>{
+            setDataArray(result);
+        })
+    }, [])
+
+    let detailedCardsList = dataArray.map((item, index) => {
         return {
             title: `Заявка №${item.id}`,
             category: "none",

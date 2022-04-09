@@ -1,6 +1,6 @@
 import someData from "./ControlTextNeuronDataBase";
 
-let getRequestsListLocal = () => {
+let getRequestsListLocal = async() => {
     let result = [];
     someData.forEach(element => {
         let t = element;
@@ -9,19 +9,25 @@ let getRequestsListLocal = () => {
     return result;
 }
 
-let getRequestDataLocal = (id) => {
+let getRequestDataLocal = async (id) => {
     return someData[id];
 }
 
-let getRequestDataExternal = (id) =>{
+let getRequestDataExternal = async (id) => {
+    let url = 'http://26.120.212.37:3000/img-req/request/' + id; 
+    let answer = await fetch(url);
+    return await answer.json();
 }
 
-let getRequestsListExternal = () =>{
+let getRequestsListExternal = async () =>{
+    let url = 'http://26.120.212.37:3000/img-req/request'; 
+    let answer = await fetch(url);
+    return await answer.json();
 }
 
 let ControlTextNeuronDataBase = {
-    getRequestData:getRequestDataLocal,
-    getRequestsList:getRequestsListLocal
+    getRequestData:getRequestDataExternal,
+    getRequestsList:getRequestsListExternal
 }
 
 export default ControlTextNeuronDataBase;

@@ -8,7 +8,7 @@ import Header from "../../Common/Header/Header";
 function LeftMenu(props) {
     const [activeCard, setActiveCard] = useState(-1);
 
-    let cardsList = ControlTextNeuron.getRequestsList().map((item, index) => {
+    let cardsList = props.cardsListData.map((item, index) => {
         return {
             title: `Заявка №${item.id}`,
             sender: item.sender_mail,
@@ -19,16 +19,17 @@ function LeftMenu(props) {
 
     function updateActiveCard(clickedCardIndex) {
         setActiveCard(clickedCardIndex)
-        cardsList = ControlTextNeuron.getRequestsList().map((item, index) => {
-            if(index === clickedCardIndex) props.updateInfo(item.id)
-            return {
-                title: `Заявка №${item.id}`,
-                sender: item.sender_mail,
-                indexInArray: index,
-                isActive: index === activeCard
-            }
-        })
     }
+
+    cardsList = props.cardsListData.map((item, index) => {
+        if(index === activeCard) props.updateInfo(item.id)
+        return {
+            title: `Заявка №${item.id}`,
+            sender: item.sender_mail,
+            indexInArray: index,
+            isActive: index === activeCard
+        }
+    })
 
     return (
 
