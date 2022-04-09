@@ -11,7 +11,7 @@ async function bootstrap() {
 
   const cors=require("cors");
   const corsOptions ={
-    origin:'*:3000',
+    origin:'*',
     methods: ['GET', 'POST'],
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:228,

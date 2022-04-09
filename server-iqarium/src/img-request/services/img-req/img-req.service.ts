@@ -4,6 +4,7 @@ import {CreateImageRequestDto} from "../../dto/CreateImageRequest.dto";
 import {InjectRepository} from "@nestjs/typeorm";
 import {RequestEntity} from "../../../typeorm";
 import {Repository} from "typeorm";
+import {CreateFormRequestDto} from "../../../text-request/dto/CreateFormRequest.dto";
 
 @Injectable()
 export class ImgReqService {
@@ -31,53 +32,52 @@ export class ImgReqService {
         console.log(newImage);
         return this.requestRepository.save(newImage);
     }
-    /*
-    createFormReq(createFormRequestDto: CreateFormRequestDto) {
-        console.log(createFormRequestDto);
-        const newForm = this.requestRepository.create(createFormRequestDto);
-        return this.requestRepository.save(newForm);
-    }
-     */
 
-    getAllRequests(): string {
-        const test: string = 'rabotaet';
-        return test;
+
+    async getAllRequests() {
+        console.log(await this.requestRepository
+            .createQueryBuilder()
+            .getMany());
+
+
+        return await this.requestRepository
+            .createQueryBuilder()
+            .getMany()
     }
 
-    getRequestById(id: number) {
-        return {
-            id: id,
-            fullName: 'Бенедикт Тимоти Карлтон Камбербетч',
-            email: 'cucumber@mail.ru',
-            receiver: 'Доктор Плюшкин',
-            text: 'Задача организации, в особенности же постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. С другой стороны начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.',
-            reqDate: '2022-04-08'
-        };
+    async getRequestById(id: number) {
+        console.log(await this.requestRepository.findOneById(id));
+
+        return await this.requestRepository.findOneById(id);
     }
 }
 
 /*
-[
+findCustomerById(id: number) {
+    return this.customers.find((user) => user.id === id);
+  }
+ */
+
+let arr: CreateFormRequestDto[] = [
     {
         "fullName": "Бенедикт Тимоти Карлтон Камбербетч",
         "email": "cucumber@mail.ru",
         "receiver": "Доктор Плюшкин",
         "text": "Задача организации, в особенности же постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. С другой стороны начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.",
-        "reqDate": "2022-04-08"
+        "reqDate": new Date("2022-04-08")
     },
     {
         "fullName": "Джек Воробей",
         "email": "sparrow@gmail.com",
         "receiver": "Доктор Плюшкин",
         "text": "Задача организации, в особенности же постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. С другой стороны начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.",
-        "reqDate": "2022-04-08"
+        "reqDate": new Date("2022-04-08")
     },
     {
         "fullName": "Сатору Годжо",
         "email": "cool@gmail.com",
         "receiver": "Доктор Плюшкин",
         "text": "Задача организации, в особенности же постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. С другой стороны начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.",
-        "reqDate": "2022-04-08"
+        "reqDate": new Date("2022-04-08")
     }
 ]
- */

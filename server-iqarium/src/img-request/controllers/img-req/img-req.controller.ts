@@ -38,7 +38,7 @@ export class ImgReqController {
     uploadFile(@UploadedFile() file: Express.Multer.File) {
         //console.log(file);
         const createImageRequestDto: CreateImageRequestDto = this.imgReqService.translateToText(file);
-        //console.log(createImageRequestDto);
+        // console.log(createImageRequestDto);
         return this.imgReqService.createImgReq(createImageRequestDto);
     }
 
