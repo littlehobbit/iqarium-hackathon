@@ -4,6 +4,7 @@ import s from "./PageCheckCategory.module.css"
 import FilterButton from "../Common/FilterButton/FilterButton";
 import DetailedCard from "../Common/DetailedCard/DetailedCard";
 import ControlTextNeuron from "../Data/ControlTextNeuron";
+import ShowMore from "../PageControlTextNeuron/LeftMenu/ShowMore/ShowMore";
 
 function PageCheckCategory() {
 
@@ -35,7 +36,8 @@ function PageCheckCategory() {
                                       category={item.category}
                                       subCategory={item.subCategory}
                                       sender={item.sender}/>
-                    })}
+                    }).slice(0,9)}
+                    {detailedCardsList.length > 10 ? <ShowMore/> : ""}
                 </div>
             </div>
 

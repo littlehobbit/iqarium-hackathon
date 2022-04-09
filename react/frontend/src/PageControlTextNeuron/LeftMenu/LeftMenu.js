@@ -3,6 +3,7 @@ import s from "./LeftMenu.module.css";
 import Card from "../../Common/Card/Card";
 import ShowMore from "./ShowMore/ShowMore";
 import ControlTextNeuron from "../../Data/ControlTextNeuron";
+import Header from "../../Common/Header/Header";
 
 function LeftMenu(props) {
     const [activeCard, setActiveCard] = useState(-1);
@@ -38,7 +39,8 @@ function LeftMenu(props) {
                                                index={item.indexInArray}
                                                isActive={item.isActive}
                                                stateChanger={updateActiveCard}
-                />)}
+                />).slice(0,11)}
+                {cardsList.length > 10 ? <ShowMore/> : ""}
             </div>
 
         </div>
