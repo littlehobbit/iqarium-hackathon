@@ -4,7 +4,7 @@ import s from "./DetailedCard.module.css";
 function DetailedCard(props) {
     func();
     return (
-        <div>
+        <div onClick={props.onclick}>
             <div className={s.detailed_card} onClick={() => {
 
             }}>

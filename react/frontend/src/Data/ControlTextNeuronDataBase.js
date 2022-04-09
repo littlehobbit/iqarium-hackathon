@@ -4,9 +4,10 @@ let someData = [
         sender_mail:"abobus@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/0/445/614"
     },
@@ -15,9 +16,10 @@ let someData = [
         sender_mail:"abobus1@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/1/445/614"
     },
@@ -26,9 +28,10 @@ let someData = [
         sender_mail:"abobus2@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/2/445/614"
     },
@@ -37,9 +40,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -48,9 +52,10 @@ let someData = [
         sender_mail:"abobus4@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/4/445/614"
     },
@@ -59,9 +64,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -70,9 +76,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -81,9 +88,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -92,9 +100,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -103,9 +112,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -114,9 +124,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -125,9 +136,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -136,9 +148,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -147,9 +160,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -158,9 +172,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -169,9 +184,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     },
@@ -180,9 +196,10 @@ let someData = [
         sender_mail:"abobus3@gmail.com",
         request:{
             full_name:"Abobus abobusovich",
+            receiver:"asdasdasdasdasd",
             request_mail:"abibus@gmail.com",
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-            request_date: new Date(2001,1,1,0,0,0,0)
+            request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
         request_image: "https://picsum.photos/seed/3/445/614"
     }

@@ -7,7 +7,7 @@ function InputWithCheckBox(props) {
     let string
     return (
         <div className={s.body}>
-            <Input icon={props.icon} placeholder ={props.placeholder}/>
+            <Input icon={props.icon} placeholder ={props.placeholder} value={props.value}/>
             <CustomCheckbox />
         </div>
     );

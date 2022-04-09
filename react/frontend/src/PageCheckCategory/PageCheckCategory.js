@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from "../Common/Header/Header";
 import s from "./PageCheckCategory.module.css"
 import FilterButton from "../Common/FilterButton/FilterButton";
@@ -6,11 +6,12 @@ import DetailedCard from "../Common/DetailedCard/DetailedCard";
 import ControlTextNeuron from "../Data/ControlTextNeuron";
 import ShowMore from "../PageControlTextNeuron/LeftMenu/ShowMore/ShowMore";
 import PopUpCheckCategories from "../PopUpCheckCategories/PopUpCheckCategories";
+import PopupFunctionality from '../Common/Popup/PopupFunctionality';
 
 function PageCheckCategory() {
 
     const [dataArray, setDataArray] = useState([]);
-
+    const popup = useRef();
     useEffect(()=>{
         ControlTextNeuron.getRequestsList().then((result)=>{
             setDataArray(result);
@@ -30,7 +31,9 @@ function PageCheckCategory() {
     return (
         <div className={s.page}>
             <Header/>
-            <PopUpCheckCategories docName={"Заявка № 323435"}/>
+            <div className={s.position_wrapper}>
+                <PopupFunctionality child={<PopUpCheckCategories/>} ref={popup} docName="asdasd"/>
+            </div>
             <div className={s.body}>
                 <div className={s.filters_list}>
                     <FilterButton text={"Все"}/>
@@ -44,7 +47,8 @@ function PageCheckCategory() {
                         return <DetailedCard title={item.title}
                                       category={item.category}
                                       subCategory={item.subCategory}
-                                      sender={item.sender}/>
+                                      sender={item.sender}
+                                      onclick={()=>{popup.current.showPopup(true)}}/>
                     }).slice(0,9)}
                     {detailedCardsList.length > 10 ? <ShowMore/> : ""}
                 </div>

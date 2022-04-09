@@ -6,7 +6,7 @@ function Area(props) {
     return (
         <div className={s.text_area}>
             <img src={props.icon} alt=""/>
-            <textarea rows="20"  type="text" value={inputValue} placeholder={props.placeholder}/>
+            <textarea rows="20"  type="text" value={inputValue} placeholder={props.placeholder} value={props.value}/>
         </div>
     );
 }

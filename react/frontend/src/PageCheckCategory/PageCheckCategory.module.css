@@ -44,3 +44,9 @@
     align-content: space-between;
     justify-content: start;
 }
+
+.position_wrapper {
+    position: absolute;
+    left: 28%;
+    top: 48%;
+}

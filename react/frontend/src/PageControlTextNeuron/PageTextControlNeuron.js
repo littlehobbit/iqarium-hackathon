@@ -4,7 +4,7 @@ import Header from "../Common/Header/Header";
 import LeftMenu from "./LeftMenu/LeftMenu";
 import MainSection from "./MainSection/MainSection";
 import ControlTextNeuron from "../Data/ControlTextNeuron";
-import Card from "../Common/Card/Card";
+
 
 function PageTextControlNeuron() {
 
@@ -19,7 +19,7 @@ function PageTextControlNeuron() {
     useEffect(()=>{
         if(currentID !== null){
             ControlTextNeuron.getRequestData(currentID).then(result=>setCurrentInfo(result));
-            setCurrentInfo({id:currentID});
+            setCurrentInfo({id:currentID, request:null});
         }
     }, [currentID])
 

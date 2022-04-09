@@ -16,18 +16,38 @@ let getRequestDataLocal = async (id) => {
 let getRequestDataExternal = async (id) => {
     let url = 'http://26.120.212.37:3000/img-req/request/' + id; 
     let answer = await fetch(url);
-    return await answer.json();
+    let parsed = await answer.json();
+    return {
+        id: parsed.id,
+        sender_mail:parsed.email,
+        request:{
+            full_name: parsed.fullName,
+            receiver:parsed.receiver,
+            request_mail:parsed.email,
+            text:parsed.text,
+            request_date: parsed.reqDate,
+        },
+        request_image: parsed.imgPath
+    }
 }
 
 let getRequestsListExternal = async () =>{
     let url = 'http://26.120.212.37:3000/img-req/request'; 
     let answer = await fetch(url);
-    return await answer.json();
+    let parsed = await answer.json();
+    let result = [];
+    parsed.forEach(element=>{
+        result.push({
+            id:element.id,
+            sender_mail:element.email
+        })
+    })
+    return result;
 }
 
-let ControlTextNeuronDataBase = {
-    getRequestData:getRequestDataLocal,
-    getRequestsList:getRequestsListLocal
+let ControlTextNeuron = {
+    getRequestData:getRequestDataExternal,
+    getRequestsList:getRequestsListExternal
 }
 
-export default ControlTextNeuronDataBase;
+export default ControlTextNeuron;

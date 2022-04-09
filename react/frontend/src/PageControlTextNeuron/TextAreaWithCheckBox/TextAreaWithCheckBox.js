@@ -7,7 +7,7 @@ function TextAreaWithCheckBox(props) {
     let string
     return (
         <div className={s.textarea_body}>
-            <Area icon={props.icon} placeholder ={props.placeholder}/>
+            <Area icon={props.icon} placeholder ={props.placeholder} value={props.value}/>
             <CustomCheckbox />
         </div>
     );

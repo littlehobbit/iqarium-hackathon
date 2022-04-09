@@ -10,7 +10,7 @@ let PopupFunctionality = forwardRef((props, ref) => {
             setVisibility(value)
         }
     }))
-
+    if(isVisible)
     return (
         <div className={s.popup}>
             <div className={s.title_block}>
@@ -24,6 +24,7 @@ let PopupFunctionality = forwardRef((props, ref) => {
             </div>
         </div>
     )
+    else return <></>
 })
 
 export default PopupFunctionality
