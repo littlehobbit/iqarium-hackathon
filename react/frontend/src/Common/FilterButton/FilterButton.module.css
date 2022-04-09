@@ -1,0 +1,32 @@
+.filter {
+    width: 190px;
+    margin-right: 24px;
+    padding: 14px 53px;
+    background: #F2F2F2;
+
+    border: 1px solid #9F9F9F;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+
+    /* Unactive */
+
+    color: #9F9F9F;
+}
+
+.filter:hover {
+    cursor: pointer;
+}
+
+.filter.active {
+    color: white;
+    background: #444D8F;
+}

@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Ubuntu&display=swap');
+
 .App {
   text-align: center;
-  width: 100%;
   display: flex;
-  justify-content: stretch;
+  width: 100%;
   height: 100%;
 }

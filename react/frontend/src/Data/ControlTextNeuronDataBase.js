@@ -1,4 +1,4 @@
-var someData = [
+let someData = [
     {
         id:0,
         sender_mail:"abobus@gmail.com",

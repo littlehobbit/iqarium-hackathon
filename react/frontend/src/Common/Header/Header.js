@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "./Header.module.css";
 import Notification from "./Notification/Notification";
-import ProfileCircle from "./ProfileCircle/ProfileCircle";
+import Profile from "./Profile/Profile";
 import Logo from "./Logo/Logo";
 
 function Header() {
@@ -10,7 +10,7 @@ function Header() {
             <Logo/>
             <div className={s.right_block}>
                 <Notification/>
-                <ProfileCircle/>
+                <Profile/>
             </div>
         </div>
     );

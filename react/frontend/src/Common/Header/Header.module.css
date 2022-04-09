@@ -5,15 +5,13 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    background-color: dimgrey;
+    background-color: white;
+    align-items: center;
 }
 
 
 .right_block {
     display: flex;
     flex-direction: row;
-}
-
-.right_block {
-    margin-right: 10px;
+    align-items: center;
 }

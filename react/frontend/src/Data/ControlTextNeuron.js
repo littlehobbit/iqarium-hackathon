@@ -4,8 +4,6 @@ let getRequestsListLocal = () => {
     let result = [];
     someData.forEach(element => {
         let t = element;
-        delete t.request_image;
-        delete t.request;
         result.push(t);
     });
     return result;

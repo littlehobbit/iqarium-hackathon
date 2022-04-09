@@ -1,0 +1,68 @@
+.detailed_card {
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    background: #CFC7FF;
+    border-radius: 15px;
+
+    padding: 16px;
+    min-width: 300px;
+    z-index: 2;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    z-index: 3;
+}
+
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+
+    /* DarkColor */
+
+    color: #262B4F;
+
+}
+
+.detailed_card > span {
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+}
+
+.category {
+    color: #444D8F;
+}
+
+.sub_category {
+    color: #656565;
+}
+
+.sender {
+    color: #262B4F;
+}
+
+.bottom_layer {
+    height: 100%;
+    position: relative;
+    left: 30px;
+    bottom: 60px;
+    min-width: 300px;
+    background: #262B4F;
+    border-radius: 15px;
+    z-index: 1;
+}
