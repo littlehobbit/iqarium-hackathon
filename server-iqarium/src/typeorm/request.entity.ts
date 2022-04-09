@@ -1,5 +1,6 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import {IsDateString, IsEmail} from "class-validator";
+import {RequestApproveEntity} from "./requestApprove.entity";
 
 @Entity({name: 'requests'})
 export class RequestEntity extends BaseEntity {
@@ -40,11 +41,35 @@ export class RequestEntity extends BaseEntity {
     })
     imgPath: string;
 
-    /*
     @Column({
-        nullable: true,
+        nullable: false,
+        default: false,
     })
-    isApproved: boolean;
+    expert1: boolean;
 
-     */
+    @Column({
+        nullable: false,
+        default: false,
+    })
+    expert2: boolean;
+
+    @Column({
+        nullable: false,
+        default: false,
+    })
+    expert3: boolean;
+
+
+    /*
+    @OneToMany(
+        () => RequestApproveEntity,
+        (requestApproveEntity) => requestApproveEntity.reqEntity
+    )
+    requestApprove: RequestApproveEntity;
+*/
 }
+/*
+@OneToMany(() => Option, (option) => option.question)
+  options: Option[];
+
+ */

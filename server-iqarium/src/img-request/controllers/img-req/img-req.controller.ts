@@ -1,12 +1,13 @@
 import {
+    Body,
     Controller,
     Get, HttpStatus,
     NotFoundException,
-    Param,
+    Param, ParseBoolPipe,
     ParseIntPipe,
-    Post,
+    Post, Res,
     UploadedFile,
-    UseInterceptors
+    UseInterceptors, UsePipes, ValidationPipe
 } from '@nestjs/common';
 import {FileInterceptor} from "@nestjs/platform-express";
 import {Express, Request} from "express";
@@ -16,6 +17,10 @@ import * as path from "path";
 import { uuid } from 'uuidv4';
 import {CreateFormRequestDto} from "../../../text-request/dto/CreateFormRequest.dto";
 import {CreateImageRequestDto} from "../../dto/CreateImageRequest.dto";
+import {UpdateImageRequestDto} from "../../dto/UpdateImageRequest.dto";
+import {of} from "rxjs";
+import {join} from "path";
+
 
 @Controller('img-req')
 export class ImgReqController {
@@ -57,9 +62,40 @@ export class ImgReqController {
         //else throw new NotFoundException();
     }
 
-    @Post('updateImgReq')
-    updateImgReq() {
-        //
+    @Post('request/:id/ApprovingImage/')
+    @UsePipes(ValidationPipe)
+    updateImgRequest(
+        @Body() updateImgRequestDto: CreateImageRequestDto,
+        @Param('id', ParseIntPipe) id: number,
+    ) {
+        return this.imgReqService.updateImgRequest(updateImgRequestDto, id)
     }
 
+    @Get('profile-image/:imagename')
+    findProfileImage(@Param('imagename') imagename, @Res() res) {
+        return of(res.sendFile(join(process.cwd(), 'uploads/requestImages/' + imagename)));
+    }
+
+    @Get('request/Picture/:id')
+    findPicture(@Param('id') id, @Res() res) {
+
+        return this.imgReqService.findPicture(id, res);
+    }
+
+    /*
+    @Get('requestImages/')
+    getPicture(@Param() imgPath: string) {
+        let res: Response;
+        res.sendfile('./uploads/requestImages/16.jpg');
+        //return this.imgReqService.getFile()
+    }
+     */
+
 }
+/*
+@Post('create')
+    @UsePipes(ValidationPipe)
+    createFormRequest(@Body() createFormRequestDto: CreateFormRequestDto) {
+        return this.formService.createFormReq(createFormRequestDto);
+    }
+ */
