@@ -3,7 +3,7 @@ import s from "./PopupBasicDesign.module.css"
 import crossIcon from "../../StaticImages/cross.svg";
 
 let PopupFunctionality = forwardRef((props, ref) => {
-    let [isVisible, setVisibility] = useState(false)
+        let [isVisible, setVisibility] = useState(false)
 
     useImperativeHandle(ref, () => ({
         showPopup(value) {
