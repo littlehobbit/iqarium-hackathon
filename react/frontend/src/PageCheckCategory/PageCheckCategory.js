@@ -11,6 +11,7 @@ import PopupFunctionality from '../Common/Popup/PopupFunctionality';
 function PageCheckCategory() {
 
     const [dataArray, setDataArray] = useState([]);
+    const [popupItem, setPopupItem] = useState({id:-1, sender:"", request:null});
     const popup = useRef();
     useEffect(()=>{
         ControlTextNeuron.getRequestsList().then((result)=>{
@@ -34,14 +35,9 @@ function PageCheckCategory() {
             <Header/>
             <div className={s.position_wrapper}>
                 <PopupFunctionality 
-                    child={<PopUpCheckCategories/>} 
+                    child={<PopUpCheckCategories defaultData={popupItem}/>} 
                     ref={popup} 
                     docName="asdasd"
-                    defaultData={
-                        {
-                            id:
-                        }
-                    }
                     />
             </div>
             <div className={s.body}>
@@ -58,7 +54,7 @@ function PageCheckCategory() {
                                       category={item.category}
                                       subCategory={item.subCategory}
                                       sender={item.sender}
-                                      onclick={()=>{popup.current.showPopup(true); return item.}}/>
+                                      onclick={()=>{popup.current.showPopup(true); setPopupItem(item)}}/>
                     }).slice(0,9)}
                     {detailedCardsList.length > 10 ? <ShowMore/> : ""}
                 </div>

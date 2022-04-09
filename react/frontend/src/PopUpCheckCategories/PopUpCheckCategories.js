@@ -13,23 +13,24 @@ import ControlTextNeuron from '../Data/ControlTextNeuron';
 
 function PopUpCheckCategories(props) {
     
-    let [requestData, setRequestData] = useState(props.defaultData);
+    let [requestData, setRequestData] = useState(null);
+    console.log(props.defaultData);
     useEffect(()=>{
-        ControlTextNeuron.getRequestData(props.defaultData).then(result=>setRequestData(result));
+        ControlTextNeuron.getRequestData(props.defaultData.id).then(result=>{setRequestData(result); console.log(result)});
     }, [])
 
     return (
         <div className={s.two_rows}>
             <div className={s.data_fields}>
-                <TextWithIcon icon={userIcon} text={"ФИО заявителя"}  value={requestData.request.full_name}/>
-                <TextWithIcon icon={mailIcon} text={"Адрес электронной почты"} value={requestData.sender_mail}/>
-                <TextWithIcon icon={homeIcon} text={"Получатель"} value={requestData.request.receiver}/>
-                <TextWithIcon icon={textBoxIcon} text={"Текст заявления"} value={requestData.request.text}/>
-                <TextWithIcon icon={calendarIcon} text={"Дата подачи заявления"} value={requestData.request.request_date}/>
+                <TextWithIcon icon={userIcon} text={"ФИО заявителя"}  text={requestData !== null ? requestData.request.full_name : ""}/>
+                <TextWithIcon icon={mailIcon} text={"Адрес электронной почты"} text={requestData !== null ? requestData.sender_mail: props.defaultData.sender_mail}/>
+                <TextWithIcon icon={homeIcon} text={"Получатель"} text={requestData !== null ? requestData.request.receiver: ""}/>
+                <TextWithIcon icon={textBoxIcon} text={"Текст заявления"} text={requestData !== null ? requestData.request.text: ""}/>
+                <TextWithIcon icon={calendarIcon} text={"Дата подачи заявления"} text={requestData !== null ? requestData.request.request_date: ""}/>
             </div>
             <div className={s.right_block}>
                 <div>
-                    <TextWithIcon icon={listIcon} text={"Сгенерированная категория"} />
+                    <TextWithIcon icon={listIcon} text={props.defaultData.subCategory} />
                     <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"} />
                 </div>
                 <div className={s.buttons_container}>
