@@ -20,6 +20,7 @@ function PageCheckCategory() {
 
     let detailedCardsList = dataArray.map((item, index) => {
         return {
+            id:item.id,
             title: `Заявка №${item.id}`,
             category: "none",
             subCategory: "none",
@@ -32,7 +33,16 @@ function PageCheckCategory() {
         <div className={s.page}>
             <Header/>
             <div className={s.position_wrapper}>
-                <PopupFunctionality child={<PopUpCheckCategories/>} ref={popup} docName="asdasd"/>
+                <PopupFunctionality 
+                    child={<PopUpCheckCategories/>} 
+                    ref={popup} 
+                    docName="asdasd"
+                    defaultData={
+                        {
+                            id:
+                        }
+                    }
+                    />
             </div>
             <div className={s.body}>
                 <div className={s.filters_list}>
@@ -48,7 +58,7 @@ function PageCheckCategory() {
                                       category={item.category}
                                       subCategory={item.subCategory}
                                       sender={item.sender}
-                                      onclick={()=>{popup.current.showPopup(true)}}/>
+                                      onclick={()=>{popup.current.showPopup(true); return item.}}/>
                     }).slice(0,9)}
                     {detailedCardsList.length > 10 ? <ShowMore/> : ""}
                 </div>

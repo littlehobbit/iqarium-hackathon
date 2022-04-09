@@ -21,11 +21,11 @@ function PopUpCheckCategories(props) {
     return (
         <div className={s.two_rows}>
             <div className={s.data_fields}>
-                <TextWithIcon icon={userIcon} text={"ФИО заявителя"} />
-                <TextWithIcon icon={mailIcon} text={"Адрес электронной почты"} />
-                <TextWithIcon icon={homeIcon} text={"Получатель"} />
-                <TextWithIcon icon={textBoxIcon} text={"Текст заявления"} />
-                <TextWithIcon icon={calendarIcon} text={"Дата подачи заявления"} />
+                <TextWithIcon icon={userIcon} text={"ФИО заявителя"}  value={requestData.request.full_name}/>
+                <TextWithIcon icon={mailIcon} text={"Адрес электронной почты"} value={requestData.sender_mail}/>
+                <TextWithIcon icon={homeIcon} text={"Получатель"} value={requestData.request.receiver}/>
+                <TextWithIcon icon={textBoxIcon} text={"Текст заявления"} value={requestData.request.text}/>
+                <TextWithIcon icon={calendarIcon} text={"Дата подачи заявления"} value={requestData.request.request_date}/>
             </div>
             <div className={s.right_block}>
                 <div>
