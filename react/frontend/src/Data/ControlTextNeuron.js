@@ -17,7 +17,6 @@ let getRequestDataExternal = async (id) => {
     let url = 'http://26.120.212.37:3000/img-req/request/' + id; 
     let answer = await fetch(url);
     let parsed = await answer.json();
-    await console.log(parsed)
     return {
         id: parsed.id,
         sender_mail:parsed.email,
@@ -62,6 +61,9 @@ let ControlTextCheckExternal = async (id, object) => {
     let url = "http://26.120.212.37:3000/img-req/request/"+id+"/ApprovingImage/"
     const res = await fetch(url, {
         method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body:JSON.stringify(object)
     });
     return await res.json();
@@ -70,7 +72,7 @@ let ControlTextCheckExternal = async (id, object) => {
 let ControlTextNeuron = {
     getRequestData:getRequestDataExternal,
     getRequestsList:getRequestsListExternal,
-    ControlTextCheck:ControlTextCheckLocal
+    ControlTextCheck:ControlTextCheckExternal
 }
  
 export default ControlTextNeuron;

@@ -6,7 +6,7 @@ function LongInput(props) {
     return (
         <div className={s.custom_input}>
             <img src={props.icon} alt=""/>
-            <input type="text" value={inputValue} placeholder={props.placeholder} value={props.value}/>
+            <input type="text" value={inputValue} placeholder={props.placeholder} value={props.value} onChange={(e)=>{props.onchange(e.target.value)}}/>
         </div>
     );
 }

@@ -39,7 +39,7 @@ function PopUpCheckCategories(props) {
             </div>
             <div className={s.right_block}>
                 <div>
-                    <TextWithIcon icon={listIcon} text={requestData !== null ? requestData.subcategory: props.defaultData.subCategory} />
+                    <TextWithIcon icon={listIcon} text={requestData !== null ? requestData.category: props.defaultData.subCategory} />
                     <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"} value={userCategory} callback={(res)=>{setCategory(res)}}/>
                 </div>
                 <div className={s.buttons_container}>

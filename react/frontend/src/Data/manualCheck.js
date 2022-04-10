@@ -54,9 +54,12 @@ let getRequestsListExternal = async () =>{
 }
 
 let WriteReplyExternal = async (id, object) => {
-    let url = "http://localhost:3000/category-analysis/addReplyToRequest/"+id
+    let url = "http://26.120.212.37:3000/category-analysis/addReplyToRequest/"+id
     const res = await fetch(url, {
         method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body:JSON.stringify(object)
     });
     return await res.json();
@@ -64,9 +67,9 @@ let WriteReplyExternal = async (id, object) => {
 
 
 let ManualCheck = {
-    getRequestData:getRequestDataLocal,
-    getRequestsList:getRequestsListLocal,
-    WriteReply:WriteReplyLocal
+    getRequestData:getRequestDataExternal,
+    getRequestsList:getRequestsListExternal,
+    WriteReply:WriteReplyExternal
 }
 
 export default ManualCheck;

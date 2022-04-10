@@ -60,7 +60,6 @@ function MainSection(props) {
                         callback={(value)=>{setRequestTime(value)}}
                         value={requestTime[1]}/>
                 </div>
-
             </div>
             <Button 
             text={"Подтвердить"} onclick={()=>{
