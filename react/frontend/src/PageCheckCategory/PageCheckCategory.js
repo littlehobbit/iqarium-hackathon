@@ -23,8 +23,8 @@ function PageCheckCategory() {
         return {
             id:item.id,
             title: `Заявка №${item.id}`,
-            category: "none",
-            subCategory: "none",
+            category: item.category,
+            subCategory: item.subcategory,
             sender: item.sender_mail,
             indexInArray: index,
         }

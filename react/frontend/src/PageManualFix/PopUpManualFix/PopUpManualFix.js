@@ -9,14 +9,15 @@ import textBoxIcon from '../../StaticImages/majesticons_textbox_blue.png'
 import listIconBlue from '../../StaticImages/majesticons_checkbox-list-line.svg'
 import Input from "../../Common/Input/Input";
 import Button from "../../Common/Button/Button";
-import ControlTextNeuron from '../../Data/ControlTextNeuron';
+import ManualCheck from '../../Data/manualCheck';
 import AreaFullWidth from "../../Common/AreaFullWidth/AreaFullWidth";
 
 function PopUpManualFix(props) {
 
     let [requestData, setRequestData] = useState(null);
+    let [replyMessage, setReplyMessage] = useState("");
     useEffect(() => {
-        ControlTextNeuron.getRequestData(props.defaultData.id).then(result => {
+        ManualCheck.getRequestData(props.defaultData.id).then(result => {
             console.log(result);
             setRequestData(result);
         });
@@ -41,22 +42,29 @@ function PopUpManualFix(props) {
                 <div className={s.right_block}>
                     <div className={s.row}>
                         <div className={s.remove_margin}>
-                            <TextWithIcon icon={listIconBlue} text={props.defaultData.subCategory}/>
+                            <TextWithIcon icon={listIconBlue} text={"Работник 1"}/>
                         </div>
-                        <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"}/>
+                        <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"} value={requestData !== null ? requestData.suggest[0].suggest : ""} state={true}/>
                     </div>
                     <div className={s.row}>
                         <div className={s.remove_margin}>
-                            <TextWithIcon icon={listIconBlue} text={props.defaultData.subCategory}/>
+                            <TextWithIcon icon={listIconBlue} text={"Работник 2"}/>
                         </div>
-                        <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"}/>
+                        <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"} value={requestData !== null ? requestData.suggest[1].suggest : ""} state={true}/>
                     </div>
                 </div>
             </div>
             <div className={s.input_field_block}>
-                <AreaFullWidth icon={textBoxIcon} value={""} placeholder={"Текст заявления"}/>
+                <AreaFullWidth icon={textBoxIcon} placeholder={"Текст заявления"} callback={(value)=>{
+                    setReplyMessage(value);
+                }}/>
                 <div className={s.marginTop}>
-                    <Button text={"Отправить"}/>
+                    <Button text={"Отправить"} onclick={()=>{
+                        let object = {
+                            replyText:replyMessage
+                        }
+                        ManualCheck.WriteReply(requestData.id, object);
+                    }}/>
                 </div>
             </div>
         </>

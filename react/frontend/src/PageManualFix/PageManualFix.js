@@ -3,7 +3,7 @@ import Header from "../Common/Header/Header";
 import s from "./PageManualFix.module.css"
 import FilterButton from "../Common/FilterButton/FilterButton";
 import DetailedCard from "../Common/DetailedCard/DetailedCard";
-import ControlTextNeuron from "../Data/ControlTextNeuron";
+import ManualCheck from "../Data/manualCheck";
 import ShowMore from "../PageControlTextNeuron/LeftMenu/ShowMore/ShowMore";
 import PopupFunctionality from "../Common/Popup/PopupFunctionality";
 import PopUpManualFix from "./PopUpManualFix/PopUpManualFix";
@@ -15,7 +15,7 @@ function PageManualFix() {
     const popup = useRef();
 
     useEffect(() => {
-        ControlTextNeuron.getRequestsList().then((result) => {
+        ManualCheck.getRequestsList().then((result) => {
             setDataArray(result);
         })
     }, [])
@@ -24,8 +24,8 @@ function PageManualFix() {
         return {
             id: item.id,
             title: `Заявка №${item.id}`,
-            category: "none",
-            subCategory: "none",
+            category: item.category,
+            subCategory: item.subcategory,
             sender: item.sender_mail,
             indexInArray: index,
         }
