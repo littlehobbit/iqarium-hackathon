@@ -58,18 +58,21 @@ let ControlTextCheckLocal = async (id, object) => {
 
 
 let ControlTextCheckExternal = async (id, object) => {
-    let url = "http://26.120.212.37:3000:3000/img-req/request/"+id+"/ApprovingImage/"
+    let url = "http://26.120.212.37:3000/img-req/request/"+id+"/ApprovingImage/"
     const res = await fetch(url, {
         method:"POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
         body:JSON.stringify(object)
     });
     return await res.json();
 }
 
 let ControlTextNeuron = {
-    getRequestData:getRequestDataLocal,
-    getRequestsList:getRequestsListLocal,
-    ControlTextCheck:ControlTextCheckLocal
+    getRequestData:getRequestDataExternal,
+    getRequestsList:getRequestsListExternal,
+    ControlTextCheck:ControlTextCheckExternal
 }
  
 export default ControlTextNeuron;

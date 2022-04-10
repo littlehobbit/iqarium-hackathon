@@ -10,7 +10,8 @@ function AreaLong(props) {
                       type="text"
                       value={inputValue}
                       placeholder={props.placeholder}
-                      value={props.value}/>
+                      value={props.value}
+                      onChange={(e)=>{props.onchange(e.target.value)}}/>
         </div>
     );
 }

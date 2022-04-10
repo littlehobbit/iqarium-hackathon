@@ -19,7 +19,7 @@ function PageTextControlNeuron() {
     useEffect(()=>{
 
         if(currentID !== null){
-            ControlTextNeuron.getRequestData(currentID).then(result=>setCurrentInfo(result));
+            ControlTextNeuron.getRequestData(currentID).then(result=>{setCurrentInfo(result);});
             setCurrentInfo({id:currentID, request:null});
         }
     }, [currentID])
