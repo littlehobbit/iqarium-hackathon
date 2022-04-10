@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import s from "./PopUpCheckCategories.module.css";
-import TextWithIcon from "../Common/TextWithIcon/TextWithIcon";
-import mailIcon from '../StaticImages/majesticons_mail_blue.png'
-import homeIcon from '../StaticImages/majesticons_home-line_blue.png'
-import userIcon from '../StaticImages/majesticons_user-line_blue.png'
-import calendarIcon from '../StaticImages/majesticons_calendar_blue.png'
-import textBoxIcon from '../StaticImages/majesticons_textbox_blue.png'
-import listIcon from '../StaticImages/majesticons_checkbox-list-line.png'
-import Input from "../Common/Input/Input";
-import Button from "../Common/Button/Button";
-import CategoryCheck from '../Data/categoryCheck.js';
+import TextWithIcon from "../../Common/TextWithIcon/TextWithIcon";
+import mailIcon from '../../StaticImages/majesticons_mail_blue.png'
+import homeIcon from '../../StaticImages/majesticons_home-line_blue.png'
+import userIcon from '../../StaticImages/majesticons_user-line_blue.png'
+import calendarIcon from '../../StaticImages/majesticons_calendar_blue.png'
+import textBoxIcon from '../../StaticImages/majesticons_textbox_blue.png'
+import listIcon from '../../StaticImages/majesticons_checkbox-list-line.png'
+import Input from "../../Common/Input/Input";
+import Button from "../../Common/Button/Button";
+import CategoryCheck from '../../Data/categoryCheck.js';
 
 function PopUpCheckCategories(props) {
 

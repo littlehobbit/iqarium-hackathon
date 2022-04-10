@@ -1,6 +1,6 @@
 import React from 'react';
 import s from "./Logo.module.css";
-import ReactLogo from '../../../StaticImages/logo.svg'
+import ReactLogo from '../../../StaticImages/logo_blue.svg'
 
 function ProfileCircle() {
     return (

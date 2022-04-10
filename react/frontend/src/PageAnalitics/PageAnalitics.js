@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Header from "../Common/Header/Header";
-import s from "./PageCheckCategory.module.css"
+import s from "./PageAnalitics.module.css"
 import FilterButton from "../Common/FilterButton/FilterButton";
 import DetailedCard from "../Common/DetailedCard/DetailedCard";
 import CategoryCheck from "../Data/categoryCheck.js";
@@ -8,7 +8,7 @@ import ShowMore from "../PageControlTextNeuron/LeftMenu/ShowMore/ShowMore";
 import PopUpCheckCategories from "./PopUpCheckCategories/PopUpCheckCategories";
 import PopupFunctionality from '../Common/Popup/PopupFunctionality';
 
-function PageCheckCategory() {
+function PageAnalitics() {
 
     const [dataArray, setDataArray] = useState([]);
     const [popupItem, setPopupItem] = useState({id:-1, sender:"", request:null});
@@ -65,4 +65,4 @@ function PageCheckCategory() {
     );
 }
 
-export default PageCheckCategory;
+export default PageAnalitics;

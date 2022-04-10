@@ -64,7 +64,13 @@ function MainSection(props) {
             </div>
             <Button 
             text={"Подтвердить"} onclick={()=>{
-                if(!fullName[0] && !senderMail[0] && !receiver[0] && !text[0] && !requestTime[0]){
+                console.log(fullName)
+                console.log(senderMail)
+                console.log(receiver)
+                console.log(text)
+                console.log(requestTime)
+                if(fullName[0] && senderMail[0] && receiver[0] && text[0] && requestTime[0]){
+                    alert("Запрос был отправлен на обработку")
                 let object = {
                     fullName:fullName[1],
                     email:senderMail[1],
@@ -73,6 +79,8 @@ function MainSection(props) {
                     reqDate:new Date(requestTime[1])
                 }
                     ControlTextNeuron.ControlTextCheck(props.object.id, object)
+                } else {
+                    alert("Вы должны одобрить все поля перед отправкой!")
                 }
             }}/>
         </div>

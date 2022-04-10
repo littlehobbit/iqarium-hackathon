@@ -63,8 +63,8 @@ let ControlTextCheckExternal = async (id, object) => {
 
 
 let CategoryCheck = {
-    getRequestData:getRequestDataLocal,
-    getRequestsList:getRequestsListLocal,
+    getRequestData:getRequestDataExternal,
+    getRequestsList:getRequestsListExternal,
     CategoryTextCheck:ControlTextCheckLocal
 }
 

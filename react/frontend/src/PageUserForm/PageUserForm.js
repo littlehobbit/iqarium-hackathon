@@ -1,9 +1,6 @@
 import React from 'react'
 import s from './PageUserForm.module.css';
-import Header from "../Common/Header/Header";
 import Button from "../Common/Button/Button";
-import Input from "../Common/Input/Input";
-import Area from "../Common/Area/Area";
 
 import mailIcon from '../StaticImages/majesticons_mail.png'
 import homeIcon from '../StaticImages/majesticons_home-line.svg'
