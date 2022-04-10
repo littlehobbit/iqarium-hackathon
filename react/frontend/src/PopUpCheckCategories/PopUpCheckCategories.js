@@ -9,35 +9,54 @@ import textBoxIcon from '../StaticImages/majesticons_textbox_blue.png'
 import listIcon from '../StaticImages/majesticons_checkbox-list-line.png'
 import Input from "../Common/Input/Input";
 import Button from "../Common/Button/Button";
-import ControlTextNeuron from '../Data/ControlTextNeuron';
+import CategoryCheck from '../Data/categoryCheck.js';
 
 function PopUpCheckCategories(props) {
 
     let [requestData, setRequestData] = useState(null);
-    console.log(props.defaultData);
+    let [userCategory, setCategory] = useState("");
+
     useEffect(()=>{
-        ControlTextNeuron.getRequestData(props.defaultData.id).then(result=>{setRequestData(result); console.log(result)});
+        CategoryCheck.getRequestData(props.defaultData.id).then(result=>{setRequestData(result); console.log(result)});
     }, [])
 
     return (
         <div className={s.two_rows}>
             <div className={s.data_fields}>
-                <TextWithIcon icon={userIcon} text={"ФИО заявителя"}  text={requestData !== null ? requestData.request.full_name : ""}/>
-                <TextWithIcon icon={mailIcon} text={"Адрес электронной почты"} text={requestData !== null ? requestData.sender_mail: props.defaultData.sender_mail}/>
-                <TextWithIcon icon={homeIcon} text={"Получатель"} text={requestData !== null ? requestData.request.receiver: ""}/>
+                <TextWithIcon 
+                    icon={userIcon} 
+                    text={requestData !== null ? requestData.request.full_name : ""} 
+                    />
+                <TextWithIcon 
+                    icon={mailIcon} 
+                    text={requestData !== null ? requestData.sender_mail: props.defaultData.sender_mail}
+                    />
+                <TextWithIcon icon={homeIcon} text={requestData !== null ? requestData.request.receiver: ""}/>
                 <div className={s.description}>
-                    <TextWithIcon icon={textBoxIcon} text={"Текст заявления"} text={requestData !== null ? requestData.request.text: ""}/>
+                    <TextWithIcon icon={textBoxIcon} text={requestData !== null ? requestData.request.text: ""}/>
                 </div>
-                <TextWithIcon icon={calendarIcon} text={"Дата подачи заявления"} text={requestData !== null ? requestData.request.request_date: ""}/>
+                <TextWithIcon icon={calendarIcon} text={requestData !== null ? requestData.request.request_date: ""}/>
             </div>
             <div className={s.right_block}>
                 <div>
-                    <TextWithIcon icon={listIcon} text={props.defaultData.subCategory} />
-                    <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"} />
+                    <TextWithIcon icon={listIcon} text={requestData !== null ? requestData.subcategory: props.defaultData.subCategory} />
+                    <Input icon={textBoxIcon} placeholder={"Предлагаемая категория"} value={userCategory} callback={(res)=>{setCategory(res)}}/>
                 </div>
                 <div className={s.buttons_container}>
-                    <Button text={"Подтвердить"} />
-                    <Button text={"Отклонить"} />
+                    <Button text={"Подтвердить"} onclick={()=>{
+                        let object = {
+                            suggest:userCategory,
+                            status:true
+                        }
+                        CategoryCheck.CategoryTextCheck(requestData.id, object);
+                    }}/>
+                    <Button text={"Отклонить"} onclick={()=>{
+                        let object = {
+                            suggest:userCategory,
+                            status:false
+                        }
+                        CategoryCheck.CategoryTextCheck(requestData.id, object);
+                    }}/>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import someData from "./ControlTextNeuronDataBase";
+import someData from "./categoryCheckDataBase";
 
 let getRequestsListLocal = async() => {
     let result = [];
@@ -13,8 +13,12 @@ let getRequestDataLocal = async (id) => {
     return someData[id];
 }
 
+let ControlTextCheckLocal = async (id, object) => {
+    console.log(id, object);
+}
+
 let getRequestDataExternal = async (id) => {
-    let url = 'http://26.120.212.37:3000/img-req/request/' + id; 
+    let url = 'http://26.120.212.37:3000/category-analysis/NotClassified/' + id; 
     let answer = await fetch(url);
     let parsed = await answer.json();
     return {
@@ -27,38 +31,29 @@ let getRequestDataExternal = async (id) => {
             text:parsed.text,
             request_date: parsed.reqDate,
         },
-        request_image: `http://26.120.212.37:3000/img-req/request/Picture/${parsed.id}`
+        category:parsed.category[0].category,
+        subcategpry:parsed.category[0].category
     }
 }
 
 let getRequestsListExternal = async () =>{
-    let url = 'http://26.120.212.37:3000/img-req/request'; 
+    let url = 'http://26.120.212.37:3000/category-analysis/NotClassified/'; 
     let answer = await fetch(url);
     let parsed = await answer.json();
     let result = [];
     parsed.forEach(element=>{
         result.push({
             id:element.id,
-            sender_mail:element.email
+            sender_mail:element.email,
+            category:element.category[0].category,
+            subcategpry:element.category[0].category
         })
     })
     return result;
 }
 
-let ControlTextCheckLocal = async (id, object) => {
-    let modified = someData[id];
-    modified.sender_mail = object.sender_mail;
-    modified.request.full_name = object.full_name;
-    modified.request.receiver = object.receiver;
-    modified.request.request_mail = object.sender_mail;
-    modified.request.text = object.text;
-    modified.request.request_date = object.request_date;
-    console.log(object, id)
-}
-
-
 let ControlTextCheckExternal = async (id, object) => {
-    let url = "http://26.120.212.37:3000:3000/img-req/request/"+id+"/ApprovingImage/"
+    let url = "http://localhost:3000/category-analysis/SuggestClassification/"+id
     const res = await fetch(url, {
         method:"POST",
         body:JSON.stringify(object)
@@ -66,10 +61,11 @@ let ControlTextCheckExternal = async (id, object) => {
     return await res.json();
 }
 
-let ControlTextNeuron = {
+
+let CategoryCheck = {
     getRequestData:getRequestDataLocal,
     getRequestsList:getRequestsListLocal,
-    ControlTextCheck:ControlTextCheckLocal
+    CategoryTextCheck:ControlTextCheckLocal
 }
- 
-export default ControlTextNeuron;
+
+export default CategoryCheck;

@@ -1,0 +1,8 @@
+POST http://26.120.212.37:3000/img-req/upload/
+Content-Type: multipart/form-data; boundary=12345
+
+--12345
+Content-Type: image/jpeg
+>.index.jpg
+
+--12345
