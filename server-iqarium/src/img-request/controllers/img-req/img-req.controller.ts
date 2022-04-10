@@ -75,7 +75,10 @@ export class ImgReqController {
     }
 
     @Get('request/Picture/:id')
-    findPicture(@Param('id') id, @Res() res) {
+    findPicture(@Param('id', ParseIntPipe) id: number, @Res() res) {
+        console.log('picture');
+        console.log(typeof id);
+        console.log(id);
 
         return this.imgReqService.findPicture(id, res);
     }

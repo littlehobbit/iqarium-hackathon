@@ -45,21 +45,44 @@ export class ImgReqService {
     }
 
     async getAllRequests() {
-        console.log(await this.requestRepository
+        /*console.log(await this.requestRepository
             .createQueryBuilder()
             .getMany());
-
+*/
+        /*return await this.requestRepository.find({
+            where: {
+                stage: 2,
+            }
+        })*/
 
         return await this.requestRepository
-            .createQueryBuilder()
+            .createQueryBuilder('r')
+            .where('r.stage=2')
             .getMany()
     }
 
     async getRequestById(id: number) {
-        const obj = (await this.requestRepository.findOneById(id));
+        /*const obj = (await this.requestRepository.findOneById(id));
         console.log(obj);
         if(obj != null) return obj;
-        else return 'Not Found: ' + HttpStatus.NOT_FOUND;
+        else return 'Not Found: ' + HttpStatus.NOT_FOUND;*/
+        console.log(await this.requestRepository
+            .createQueryBuilder('r')
+            .where('r.stage=2')
+            .andWhere(`r.id=${id}`)
+            .getMany()
+        )
+        /*return await this.requestRepository
+            .createQueryBuilder('r')
+            .where('r.stage=2')
+            .andWhere(`r.id=${id}`)
+            .getMany()*/
+        return await this.requestRepository.findOne({
+            where: {
+                id: id,
+                stage: 2,
+            }
+        })
     }
 
     async updateImgRequest(updateImgRequestDto: CreateImageRequestDto, id: number) {

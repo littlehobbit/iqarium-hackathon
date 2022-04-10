@@ -10,9 +10,7 @@ export class FormController {
     @Post('create')
     @UsePipes(ValidationPipe)
     createFormRequest(@Body() createFormRequestDto: CreateFormRequestDto) {
+        console.log(createFormRequestDto);
         return this.formService.createFormReq(createFormRequestDto);
     }
-
-
-
 }
