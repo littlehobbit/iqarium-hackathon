@@ -38,27 +38,32 @@ function MainSection(props) {
                         icon={userIcon} 
                         placeholder={"ФИО заявителя"} 
                         value={fullName[1]}
-                        callback={(value)=>{setFullName(value)}}/>
+                        callback={(value)=>{setFullName(value)}}
+                        checkState={fullName[0]}/>
                     <InputWithCheckBox 
                         icon={mailIcon} 
                         placeholder={"Адрес электронной почты"} 
                         callback={(value)=>{setSenderMail(value)}}
-                        value={senderMail[1]}/>
+                        value={senderMail[1]}
+                        checkState={senderMail[0]}/>
                     <InputWithCheckBox 
                         icon={homeIcon} 
                         placeholder={"Получатель"} 
                         callback={(value)=>{setReceiver(value)}}
-                        value={receiver[1]}/>
+                        value={receiver[1]}
+                        checkState={receiver[0]}/>
                     <TextAreaWithCheckBox 
                         icon={textBoxIcon} 
                         placeholder={"Текст заявления"}
                         callback={(value)=>{setText(value)}} 
-                        value={text[1]}/>
+                        value={text[1]}
+                        checkState={text[0]}/>
                     <InputWithCheckBox 
                         icon={calendarIcon} 
                         placeholder={"Дата подачи заявления"} 
                         callback={(value)=>{setRequestTime(value)}}
-                        value={requestTime[1]}/>
+                        value={requestTime[1]}
+                        checkState={requestTime[0]}/>
                 </div>
             </div>
             <Button 

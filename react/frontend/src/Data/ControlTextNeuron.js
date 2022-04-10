@@ -42,7 +42,9 @@ let getRequestsListExternal = async () =>{
             sender_mail:element.email
         })
     })
-    return result;
+    return result.sort ((a, b) => {
+       return a.id - b.id
+    });
 }
 
 let ControlTextCheckLocal = async (id, object) => {
