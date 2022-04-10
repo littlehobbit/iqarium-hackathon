@@ -19,7 +19,7 @@ export class CategoryAnalysisService {
         const notClass = await this.requestRepository
             .createQueryBuilder('r')
             .leftJoinAndMapMany('r.category', 'categories',  'c', 'c.reqIdCatId = r.id')
-            .where('r.stage = 3')
+            .where('r.stage = 4')
             .getMany();
         return notClass
     }
@@ -28,7 +28,7 @@ export class CategoryAnalysisService {
         const notClass = await this.requestRepository
             .createQueryBuilder('r')
             .leftJoinAndMapMany('r.category', 'categories',  'c', 'c.reqIdCatId = r.id')
-            .where('r.stage = 3')
+            .where('r.stage = 4')
             .andWhere(`r.id = ${id}`)
             .getOne()
         return notClass;
@@ -74,7 +74,7 @@ export class CategoryAnalysisService {
                     })
 
                     let flag: boolean = true;
-                    for(let i; i < entityArr.length && flag === true; i++) {
+                    for(let i=0; i < entityArr.length && flag === true; i++) {
                         if (entityArr[i].status === false) flag = false;
                     }
 

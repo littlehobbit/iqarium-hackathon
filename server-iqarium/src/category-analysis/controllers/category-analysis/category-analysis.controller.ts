@@ -33,6 +33,7 @@ export class CategoryAnalysisController {
     suggestClassification(
         @Param('id', ParseIntPipe) id: number, @Body() confirm: SuggestClassBodyDto,
     ) {
+        console.log('bool')
         console.log(Boolean(confirm.status))
         return this.categoryAnalysisService.suggestClassification(id, confirm.suggest, Boolean(confirm.status));
     }
