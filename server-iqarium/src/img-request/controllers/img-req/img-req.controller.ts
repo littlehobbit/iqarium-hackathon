@@ -58,9 +58,6 @@ export class ImgReqController {
     //@HttpStatus('')
     getRequestById(@Param('id', ParseIntPipe) id: number) {
         return this.imgReqService.getRequestById(id);
-        //const requestMed = this.getRequestById(id);
-        //if(requestMed) return requestMed;
-        //else throw new NotFoundException();
     }
 
     @Post('request/:id/ApprovingImage/')
@@ -83,20 +80,10 @@ export class ImgReqController {
         return this.imgReqService.findPicture(id, res);
     }
 
-    /*
-    @Get('requestImages/')
-    getPicture(@Param() imgPath: string) {
-        let res: Response;
-        res.sendfile('./uploads/requestImages/16.jpg');
-        //return this.imgReqService.getFile()
+    @Get('/getAllChecked')
+    getAllChecked() {
+        return this.imgReqService.getAllChecked();
     }
-     */
+
 
 }
-/*
-@Post('create')
-    @UsePipes(ValidationPipe)
-    createFormRequest(@Body() createFormRequestDto: CreateFormRequestDto) {
-        return this.formService.createFormReq(createFormRequestDto);
-    }
- */

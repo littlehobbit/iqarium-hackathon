@@ -1,4 +1,4 @@
-import {HttpStatus, Injectable, Res} from '@nestjs/common';
+import {HttpStatus, Injectable, NotFoundException, Res} from '@nestjs/common';
 import {Express, Response} from "express";
 import {CreateImageRequestDto} from "../../dto/CreateImageRequest.dto";
 import {InjectRepository} from "@nestjs/typeorm";
@@ -24,26 +24,25 @@ export class ImgReqService {
 
     async translateToText (img: Express.Multer.File) {
         const createImageRequestDto: CreateImageRequestDto = {
-            "fullName": "Джек Воробей",
-            "email": "sparrow@gmail.com",
-            "receiver": "Доктор Плюшкин",
+            "fullName": "Рафик Лиман",
+            "email": "kingofsouth@gmail.com",
+            "receiver": "Доктор Фельдшер",
             "text": "Задача организации, в особенности же постоянный количественный рост и сфера нашей активности в значительной степени обуславливает создание соответствующий условий активизации. С другой стороны начало повседневной работы по формированию позиции обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также новая модель организационной деятельности позволяет выполнять важные задания по разработке новых предложений.",
             "reqDate": new Date("2022-04-08"),
-            "imgPath": "./uploads/requestImages/16.jpg",
+            "imgPath": img.path,
         }
+        /*
+
+         */
         console.log(createImageRequestDto);
         const newImage = this.requestRepository.create(createImageRequestDto);
         console.log(newImage);
         const requestEntity: RequestEntity = await this.requestRepository.save(newImage);
         requestEntity.stage = 2;
-        //return requestEntity;
-        //return createImageRequestDto;
+        return await  this.requestRepository.update({id: requestEntity.id}, {
+            stage: 2,
+        });
     }
-
-    createImgReq(createImageRequestDto: CreateImageRequestDto) {
-
-    }
-
 
     async getAllRequests() {
         console.log(await this.requestRepository
@@ -56,21 +55,16 @@ export class ImgReqService {
             .getMany()
     }
 
-    /*getFile(@Res() res: Response) {
-        const file = createReadStream(join(process.cwd(), './uploads/requestImages/16.jpg'));
-        file.pipe(res);
-    }*/
-
     async getRequestById(id: number) {
-        console.log(await this.requestRepository.findOneById(id));
-
-        return await this.requestRepository.findOneById(id);
+        const obj = (await this.requestRepository.findOneById(id));
+        console.log(obj);
+        if(obj != null) return obj;
+        else return 'Not Found: ' + HttpStatus.NOT_FOUND;
     }
 
     async updateImgRequest(updateImgRequestDto: CreateImageRequestDto, id: number) {
         const reqEntity: RequestEntity = await this.requestRepository.findOneById(id);
         if(reqEntity) {
-            //for(var i in updateImgRequestDto) if(i === null) delete updateImgRequestDto[i];
             await this.requestRepository.update({id: id}, updateImgRequestDto)
             await this.requestRepository.update({id: id}, {
                 expertTranslator: true,
@@ -87,15 +81,14 @@ export class ImgReqService {
         else res.send(HttpStatus.NOT_FOUND)
     }
 
+    async getAllChecked() {
+        console.log('123');
+        const requestEntities: RequestEntity[] = await this.requestRepository.find({
+            where: {
+                stage: 2
+            }
+        })
+        return requestEntities;
 
-
-    //findRequestById(id: number): Promise<>
-
-    /*
-     async findQuestionById(id: number): Promise<Question> {
-    return await this.questionRepository.findOne(id, {
-      relations: ['quiz', 'options'],
-    });
-  }
-     */
+    }
 }

@@ -1,5 +1,17 @@
-import {Controller, Get, Param, ParseIntPipe, Post} from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Get,
+    Param,
+    ParseBoolPipe,
+    ParseIntPipe,
+    Post,
+    UsePipes,
+    ValidationPipe
+} from '@nestjs/common';
 import {CategoryAnalysisService} from "../../services/category-analysis/category-analysis.service";
+import {SuggestClassBodyDto} from "../../dto/SuggestClassBody.dto";
+import {AddReplyDto} from "../../dto/AddReply.dto";
 
 @Controller('category-analysis')
 export class CategoryAnalysisController {
@@ -17,10 +29,12 @@ export class CategoryAnalysisController {
     }
 
     @Post('/SuggestClassification/:id')
+    @UsePipes(ValidationPipe)
     suggestClassification(
-        @Param('id', ParseIntPipe) id: number, suggest: string, status: boolean,
+        @Param('id', ParseIntPipe) id: number, @Body() confirm: SuggestClassBodyDto,
     ) {
-        return this.categoryAnalysisService.suggestClassification(id, suggest, status);
+        console.log(Boolean(confirm.status))
+        return this.categoryAnalysisService.suggestClassification(id, confirm.suggest, Boolean(confirm.status));
     }
 
     @Get('/getManualState')
@@ -34,8 +48,11 @@ export class CategoryAnalysisController {
     }
 
     @Post('/addReplyToRequest/:id')
-    addReplyToRequest(@Param('id', ParseIntPipe) id: number, replyText: string) {
-        return this.categoryAnalysisService.addReply(id, replyText);
+    @UsePipes(ValidationPipe)
+    addReplyToRequest(@Param('id', ParseIntPipe) id: number, @Body() reply: AddReplyDto) {
+        return this.categoryAnalysisService.addReply(id, reply.replyText);
     }
+
+
 
 }

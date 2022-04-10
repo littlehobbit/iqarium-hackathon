@@ -17,7 +17,9 @@ export class FormService {
         console.log(createFormRequestDto);
         const newForm = this.requestRepository.create(createFormRequestDto);
         const entity: RequestEntity = await this.requestRepository.save(newForm);
-        entity.expertTranslator = true;
-        entity.stage = 3;
+        await this.requestRepository.update({id: entity.id}, {
+            stage: 3,
+            expertTranslator: true,
+        })
     }
 }
