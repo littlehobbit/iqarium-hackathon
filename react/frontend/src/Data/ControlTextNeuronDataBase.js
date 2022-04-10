@@ -12,7 +12,7 @@ let someData = [
         request_image: "https://picsum.photos/seed/0/445/614"
     },
     {
-        id:12345,
+        id:1,
         sender_mail:"abobus1@gmail.com",
         request:{
             full_name:"Abobus abobusovich",

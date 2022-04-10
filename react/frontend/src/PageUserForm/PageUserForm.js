@@ -12,6 +12,7 @@ import textBoxIcon from '../StaticImages/majesticons_textbox.png'
 import ReactLogo from "../StaticImages/logo_white.svg";
 import LongInput from "../Common/LongInput/LongInput";
 import AreaLong from "../Common/AreaLong/AreaLong";
+import Footer from "../Common/Footer/Footer";
 
 function PageUserForm(props) {
     return (
@@ -44,8 +45,8 @@ function PageUserForm(props) {
                     <AreaLong icon={textBoxIcon} placeholder={"Текст заявления"}/>
                     <Button text={"Отправить"}/>
                 </div>
-
             </div>
+            <Footer/>
         </div>
     )
 }
