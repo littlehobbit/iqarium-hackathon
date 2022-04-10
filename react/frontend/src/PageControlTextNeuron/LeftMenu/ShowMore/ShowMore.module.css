@@ -1,0 +1,29 @@
+.show_more_block {
+    margin-top: 6px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration: none;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+
+    /* MainColor */
+
+    color: #444D8F;
+}
+
+.arrow {
+    margin-right: 16px;
+    width: 13px;
+    height: 7px;
+    padding: 12px 9px 13px 10px;
+}

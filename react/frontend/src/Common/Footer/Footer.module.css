@@ -1,0 +1,116 @@
+.footer {
+    padding-left: 145px;
+    padding-right: 145px;
+    margin-bottom: 24px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #262B4F;
+    align-items: start;
+    padding-bottom: 70px;
+    padding-top: 24px;
+}
+
+
+.right_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo_img {
+    margin-right: 10px;
+}
+
+.first_block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+
+    color: #FFFFFF;
+
+}
+
+.second_block {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+
+    color: #FFFFFF;
+
+}
+
+.third_block {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.third_block p {
+    text-align: start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+
+    color: #FFFFFF;
+}
+
+.third_block p:first-child {
+    text-align: start;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.4px;
+
+    color: #FFFFFF;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    margin-top: 20px;
+}

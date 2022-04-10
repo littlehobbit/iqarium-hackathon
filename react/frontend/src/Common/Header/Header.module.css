@@ -1,0 +1,16 @@
+.header_body {
+    padding: 10px 145px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+}
+
+
+.right_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

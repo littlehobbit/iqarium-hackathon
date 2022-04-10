@@ -1,0 +1,125 @@
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    overflow: hidden;
+}
+
+.white_button {
+    padding: 15px 55px;
+    border-radius: 15px;
+    background-color: white;
+    color: #262B4F;
+    width: 432px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.4px;
+
+}
+
+.title {
+    margin-bottom: 56px;
+    width: 623px;
+    text-align: left;
+    font-family: 'Montserrat',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 0.4px;
+
+    color: #FFFFFF;
+}
+
+.subtitle {
+    margin-bottom: 88px;
+    width: 730px;
+    text-align: left;
+    font-family: 'Ubuntu', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 0.4px;
+
+    color: #CBCBCB;
+
+}
+
+.block_big_pic {
+    margin-bottom: 180px;
+    margin-left: 145px;
+
+}
+
+.two_rows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #444D8F url('./../StaticImages/image1.png') no-repeat 100% 0px;
+}
+
+.fields_wrapper {
+    margin: 0 auto 60px auto;
+    width: 445px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.fields_wrapper div:last-child {
+    margin-top: 50px;
+}
+
+.simple_text {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0.4px;
+    text-align: left;
+    padding: 0 20px;
+    margin-bottom: 56px;
+    margin-top: 48px;
+    /* DarkColor */
+
+    color: #262B4F;
+}
+
+.fields_block {
+    padding-bottom: 60px;
+    margin: 0 auto;
+    width: 1100px;
+    background-color: white;
+}
+
+.logo {
+    margin-left: 145px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 122px;
+}
+
+.logo span {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    color: white;
+}
+
+.logo_img {
+    margin-right: 10px;
+}

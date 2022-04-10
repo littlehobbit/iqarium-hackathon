@@ -1,0 +1,27 @@
+.custom_button {
+    padding: 15px 55px 15px 54px;
+    color: #444D8F;
+    border: 2px solid #444D8F;
+    border-radius: 15px;
+
+    width: 87px;
+    height: 11px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.4px;
+}
+
+.custom_button:hover {
+    color: white;
+    background-color: #444D8F;
+    cursor: pointer;
+
+}
