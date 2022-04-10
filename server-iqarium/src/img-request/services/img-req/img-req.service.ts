@@ -85,16 +85,20 @@ export class ImgReqService {
         })
     }
 
-    async updateImgRequest(updateImgRequestDto: CreateImageRequestDto, id: number) {
+    async updateImgRequest(updateImgRequestDto: UpdateImageRequestDto, id: number) {
         const reqEntity: RequestEntity = await this.requestRepository.findOneById(id);
         if(reqEntity) {
+            console.log('Yes!')
+            console.log('Yes!')
             await this.requestRepository.update({id: id}, updateImgRequestDto)
             await this.requestRepository.update({id: id}, {
                 expertTranslator: true,
                 stage: 3,
             })
             this.labelingService.addQueue(id);
+            return HttpStatus.OK;
         }
+        else console.log(HttpStatus.CONFLICT);
     }
 
     async findPicture(id: number, @Res() res) {

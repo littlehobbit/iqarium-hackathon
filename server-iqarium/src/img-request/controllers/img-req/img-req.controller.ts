@@ -60,10 +60,11 @@ export class ImgReqController {
         return this.imgReqService.getRequestById(id);
     }
 
+
     @Post('request/:id/ApprovingImage/')
     @UsePipes(ValidationPipe)
     updateImgRequest(
-        @Body() updateImgRequestDto: CreateImageRequestDto,
+        @Body() updateImgRequestDto: UpdateImageRequestDto,
         @Param('id', ParseIntPipe) id: number,
     ) {
         return this.imgReqService.updateImgRequest(updateImgRequestDto, id);
