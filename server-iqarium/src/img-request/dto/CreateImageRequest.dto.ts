@@ -14,7 +14,7 @@ export class CreateImageRequestDto {
     receiver: string;
 
     @IsNotEmpty()
-    @MinLength(100)
+    //@MinLength(100)
     text: string;
 
     @IsNotEmpty()
