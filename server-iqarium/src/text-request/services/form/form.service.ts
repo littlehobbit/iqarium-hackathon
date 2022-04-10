@@ -5,12 +5,13 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {RequestEntity} from "../../../typeorm/request.entity";
 import {Repository} from "typeorm";
 import {RequestApproveEntity} from "../../../typeorm";
+import {LabelingService} from "../../../category-analysis/services/labeling/labeling.service";
 
 @Injectable()
 export class FormService {
     constructor(
         @InjectRepository(RequestEntity) private readonly requestRepository: Repository<RequestEntity>,
-
+        private labelingService: LabelingService,
     ) {
     }
     async createFormReq(createFormRequestDto: CreateFormRequestDto) {
@@ -21,5 +22,6 @@ export class FormService {
             stage: 3,
             expertTranslator: true,
         })
+        this.labelingService.addQueue(entity.id);
     }
 }
