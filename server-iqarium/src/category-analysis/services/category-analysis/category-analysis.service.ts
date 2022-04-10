@@ -30,7 +30,7 @@ export class CategoryAnalysisService {
             .leftJoinAndMapMany('r.category', 'categories',  'c', 'c.reqIdCatId = r.id')
             .where('r.stage = 3')
             .andWhere(`r.id = ${id}`)
-            .getMany();
+            .getOne()
         return notClass;
     }
 
@@ -112,7 +112,7 @@ export class CategoryAnalysisService {
             .leftJoinAndMapMany('r.category', 'categories',  'c', 'c.reqIdCatId = r.id')
             .where('r.stage = 5')
             .andWhere(`r.id = ${id}`)
-            .getMany();
+            .getOne();
         return notClass;
     }
 
