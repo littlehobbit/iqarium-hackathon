@@ -9,7 +9,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/0/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:1,
@@ -21,7 +22,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/1/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:2,
@@ -33,7 +35,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/2/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:3,
@@ -45,7 +48,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:4,
@@ -57,7 +61,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/4/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:5,
@@ -69,7 +74,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:6,
@@ -81,7 +87,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:7,
@@ -93,7 +100,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:8,
@@ -105,7 +113,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:9,
@@ -117,7 +126,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:10,
@@ -129,7 +139,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:11,
@@ -141,7 +152,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:12,
@@ -153,7 +165,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:13,
@@ -165,7 +178,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:14,
@@ -177,7 +191,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:15,
@@ -189,7 +204,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     },
     {
         id:16,
@@ -201,7 +217,8 @@ let someData = [
             text:"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
             request_date: (new Date(2001,1,1,0,0,0,0)).toDateString()
         },
-        request_image: "https://picsum.photos/seed/3/445/614"
+        category:"aboba",
+        subcategory:"aboba",
     }
 ]
 
