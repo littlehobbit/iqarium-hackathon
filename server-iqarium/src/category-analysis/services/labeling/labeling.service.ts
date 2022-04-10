@@ -2,6 +2,13 @@ import { Injectable } from '@nestjs/common';
 import {CategoryEntity, ReplyEntity, RequestApproveEntity, RequestEntity} from "../../../typeorm";
 import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
+import { Response, Request } from "express";
+import axios, {AxiosResponse} from 'axios';
+
+interface ClassificationList {
+    list: string[]
+}
+
 
 @Injectable()
 export class LabelingService {
@@ -12,7 +19,7 @@ export class LabelingService {
     ) {
     }
 
-    queueArr: number[];
+    queueArr = [];
     executing: Promise<any>;
 
     addQueue(id) {
@@ -27,14 +34,26 @@ export class LabelingService {
 
         const entityReq: RequestEntity = await this.requestRepository.findOneById(id);
 
-        let xmlHttp = new XMLHttpRequest();
-        xmlHttp.open( "POST", 'http://10.2.0.105:5050/get-classification', false ); // false for synchronous request
-        await xmlHttp.send(JSON.stringify({
-            text: entityReq.text,
-        }) );
-        const category: string = await xmlHttp.response();
 
-        let array = JSON.parse(xmlHttp.response.body);
+
+        axios.post<ClassificationList>('http://10.2.0.105:5000/get-classification',
+            { text: entityReq.text }
+            )
+            .then(async response => {
+                console.log(response.data);
+                await this.requestRepository.update(
+                    {
+                        id: id,
+                    },
+                    {
+                        stage: 4,
+                    }
+                )
+            });
+
+
+
+        /*let array = JSON.parse(xmlHttp.response.body);
 
         let arr = []
         array.classification.forEach( element =>{
@@ -43,16 +62,9 @@ export class LabelingService {
                 reqIdCat:entityReq
             }))
         })
-        const result = Promise.all(arr);
-        this.requestRepository.update(
-            {
-                id: id,
-            },
-            {
-                stage: 4,
-            }
-        )
-        console.log(array);
+        const result = Promise.all(arr);*/
+
+        //console.log(array);
     }
 
     async execute(){

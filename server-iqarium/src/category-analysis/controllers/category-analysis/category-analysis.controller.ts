@@ -28,41 +28,14 @@ export class CategoryAnalysisController {
         return this.categoryAnalysisService.getAllManual();
     }
 
+    @Get('/getManualState/:id')
+    getManualById(@Param('id', ParseIntPipe) id: number) {
+        return this.categoryAnalysisService.getManualById(id);
+    }
+
     @Post('/addReplyToRequest/:id')
     addReplyToRequest(@Param('id', ParseIntPipe) id: number, replyText: string) {
         return this.categoryAnalysisService.addReply(id, replyText);
     }
-
-
-
-
-
-    @Post('/AIClassification/:id')
-    AIClassification() {
-
-    }
-
-    @Get('/getClassification')
-    getClassification() {
-
-    }
-
-    @Get('/getClassification/:id')
-    getClassificationById() {
-
-    }
-
-    @Post('/checkClassificationByExpert/:id/:ExpertId')
-    checkClassificationByExpert() {
-
-    }
-
-
-
-    @Get('/getManualState/:id')
-    getManualStateById() {
-
-    }
-
 
 }

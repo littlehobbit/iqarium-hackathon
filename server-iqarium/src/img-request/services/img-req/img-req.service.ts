@@ -10,6 +10,7 @@ import {UpdateImageRequestDto} from "../../dto/UpdateImageRequest.dto";
 import {createReadStream} from "fs";
 import { join } from 'path';
 import {of} from "rxjs";
+import {LabelingService} from "../../../category-analysis/services/labeling/labeling.service";
 
 @Injectable()
 export class ImgReqService {
@@ -17,7 +18,7 @@ export class ImgReqService {
     constructor(
         @InjectRepository(RequestEntity) private readonly requestRepository: Repository<RequestEntity>,
         @InjectRepository(RequestApproveEntity) private readonly requestApproveRepository: Repository<RequestApproveEntity>,
-
+        private labelingService: LabelingService,
     ) {
     }
 
@@ -75,6 +76,7 @@ export class ImgReqService {
                 expertTranslator: true,
                 stage: 3,
             })
+            this.labelingService.addQueue(id);
         }
     }
 
