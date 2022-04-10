@@ -31,14 +31,14 @@ let getRequestDataExternal = async (id) => {
             text:parsed.text,
             request_date: parsed.reqDate,
         },
-        category:parsed.category[0].category,
-        subcategpry:parsed.category[0].category,
+        category:parsed.category.length > 0 ? parsed.category[0].category: "Undefined",
+        subcategpry:parsed.category.length > 0 ? parsed.category[0].category: "Undefined",
         suggest:parsed.suggest
     }
 }
 
 let getRequestsListExternal = async () =>{
-    let url = 'http://26.120.212.37:3000/category-analysis/NotClassified/'; 
+    let url = 'http://26.120.212.37:3000/category-analysis/GetManualState/'; 
     let answer = await fetch(url);
     let parsed = await answer.json();
     let result = [];
@@ -46,8 +46,8 @@ let getRequestsListExternal = async () =>{
         result.push({
             id:element.id,
             sender_mail:element.email,
-            category:element.category[0].category,
-            subcategpry:element.category[0].category
+            category:element.category.length > 0 ? element.category[0].category: "Undefined",
+            subcategpry:element.category.length > 0 ? element.category[0].category: "Undefined"
         })
     })
     return result;
