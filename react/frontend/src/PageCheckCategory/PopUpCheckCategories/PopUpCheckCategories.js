@@ -49,6 +49,7 @@ function PopUpCheckCategories(props) {
                             status:true
                         }
                         CategoryCheck.CategoryTextCheck(requestData.id, object);
+                        document.location.reload()
                     }}/>
                     <Button text={"Отклонить"} onclick={()=>{
                         let object = {

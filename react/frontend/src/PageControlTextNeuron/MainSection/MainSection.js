@@ -83,6 +83,7 @@ function MainSection(props) {
                     reqDate:new Date(requestTime[1])
                 }
                     ControlTextNeuron.ControlTextCheck(props.object.id, object)
+                    document.location.reload()
                 } else {
                     alert("Вы должны одобрить все поля перед отправкой!")
                 }

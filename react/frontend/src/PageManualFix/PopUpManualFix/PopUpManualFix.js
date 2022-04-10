@@ -64,6 +64,7 @@ function PopUpManualFix(props) {
                             replyText:replyMessage
                         }
                         ManualCheck.WriteReply(requestData.id, object);
+                        document.location.reload()
                     }}/>
                 </div>
             </div>
