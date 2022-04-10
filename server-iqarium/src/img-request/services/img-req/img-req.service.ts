@@ -85,7 +85,7 @@ export class ImgReqService {
         console.log('123');
         const requestEntities: RequestEntity[] = await this.requestRepository.find({
             where: {
-                stage: 2
+                stage: 2,
             }
         })
         return requestEntities;

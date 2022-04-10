@@ -97,7 +97,8 @@ export class CategoryAnalysisService {
     async getAllManual() {
         const notClass = await this.requestRepository
             .createQueryBuilder('r')
-            .leftJoinAndMapMany('r.suggest', 'reqApprove',  'c', 'c.reqIdId = r.id')
+            .leftJoinAndMapMany('r.suggest', 'reqApprove',  'rA', 'rA.reqIdId = r.id')
+            .leftJoinAndMapMany('r.category', 'categories',  'c', 'c.reqIdCatId = r.id')
             .where('r.stage = 5')
             .getMany();
         return notClass
@@ -107,7 +108,8 @@ export class CategoryAnalysisService {
         //const element = await this.requestRepository.findOneById(id);
         const notClass = await this.requestRepository
             .createQueryBuilder('r')
-            .leftJoinAndMapMany('r.suggest', 'reqApprove',  'c', 'c.reqIdId = r.id')
+            .leftJoinAndMapMany('r.suggest', 'reqApprove',  'rA', 'rA.reqIdId = r.id')
+            .leftJoinAndMapMany('r.category', 'categories',  'c', 'c.reqIdCatId = r.id')
             .where('r.stage = 5')
             .andWhere(`r.id = ${id}`)
             .getMany();
